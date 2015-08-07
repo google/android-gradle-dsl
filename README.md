@@ -1,4 +1,5 @@
 # [Reference for latest plugin version](http://google.github.io/android-gradle-dsl/current)
+[All versions](http://google.github.io/android-gradle-dsl) (http://google.github.io/android-gradle-dsl)
 
 ## Android Gradle Plugin DSL Reference
 
