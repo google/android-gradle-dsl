@@ -1,7 +1,7 @@
 # [Reference for latest plugin version](http://google.github.io/android-gradle-dsl/current)
 [All versions](http://google.github.io/android-gradle-dsl) (http://google.github.io/android-gradle-dsl)
 
-[Transform API Javadoc](http://google.github.io/android-gradle-dsl/javadoc/transform-api/)
+[API Javadoc](http://google.github.io/android-gradle-dsl/javadoc/)
 ## Android Gradle Plugin DSL Reference
 
 This repository contains HTML documentation generated from Android Gradle Plugin
