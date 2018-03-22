@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>BuildType - Android Plugin 3.1.0-dev DSL Reference</title><link type="text/css" rel="stylesheet" href="base.css"><link type="text/css" rel="stylesheet" href="docs.css"><link type="text/css" rel="stylesheet" href="dsl.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="index.html" title="Android Plugin 3.1.0-dev DSL Reference"><link rel="up" href="index.html" title="Android Plugin 3.1.0-dev DSL Reference"><link rel="prev" href="com.android.builder.core.DefaultBuildType.html" title="DefaultBuildType - Android Plugin 3.1.0-dev DSL Reference"><link rel="next" href="com.android.builder.signing.DefaultSigningConfig.html" title="DefaultSigningConfig - Android Plugin 3.1.0-dev DSL Reference"></head><body><div class="sidebar"><ul><li><a xmlns:xslthl="http://xslthl.sf.net" href="index.html" title="Android Plugin 3.1.0-dev DSL Reference">Home</a></li><li class="sidebarHeading selected">BuildType</li><ul class="sections"><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.internal.dsl.BuildType.html#N10D3F" title="Properties">Properties</a></li><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.internal.dsl.BuildType.html#N10E2E" title="Methods">Methods</a></li><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.internal.dsl.BuildType.html#N10E9E" title="Script blocks">Script blocks</a></li></ul><li class="sidebarHeading">Extension types</li><li><a class="link" href="com.android.build.gradle.AppExtension.html"><code class="literal">AppExtension</code></a></li><li><a class="link" href="com.android.build.gradle.LibraryExtension.html"><code class="literal">LibraryExtension</code></a></li><li><a class="link" href="com.android.build.gradle.TestExtension.html"><code class="literal">TestExtension</code></a></li><li><a class="link" href="com.android.build.gradle.FeatureExtension.html"><code class="literal">FeatureExtension</code></a></li><li class="sidebarHeading">Configuration blocks</li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:aaptOptions(org.gradle.api.Action)"><code class="literal">aaptOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:adbOptions(org.gradle.api.Action)"><code class="literal">adbOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:buildTypes(org.gradle.api.Action)"><code class="literal">buildTypes { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:compileOptions(org.gradle.api.Action)"><code class="literal">compileOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dataBinding(org.gradle.api.Action)"><code class="literal">dataBinding { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:defaultConfig(org.gradle.api.Action)"><code class="literal">defaultConfig { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dexOptions(org.gradle.api.Action)"><code class="literal">dexOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:externalNativeBuild(org.gradle.api.Action)"><code class="literal">externalNativeBuild { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:jacoco(org.gradle.api.Action)"><code class="literal">jacoco { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:lintOptions(org.gradle.api.Action)"><code class="literal">lintOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:packagingOptions(org.gradle.api.Action)"><code class="literal">packagingOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:productFlavors(org.gradle.api.Action)"><code class="literal">productFlavors { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:signingConfigs(org.gradle.api.Action)"><code class="literal">signingConfigs { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:sourceSets(org.gradle.api.Action)"><code class="literal">sourceSets { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:splits(org.gradle.api.Action)"><code class="literal">splits { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:testOptions(org.gradle.api.Action)"><code class="literal">testOptions { }</code></a></li></ul></div><div class="content"><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="com.android.build.gradle.internal.dsl.BuildType"></a>BuildType</h1></div></div></div><p>DSL object to configure build types.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N10D3F"></a>Properties</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N10D42"><thead><tr><td>Property</td><td>Description</td></tr></thead><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:applicationIdSuffix"><code class="literal">applicationIdSuffix</code></a></td><td><p>Application id suffix. It is appended to the "base" application id when calculating the final
+application id for a variant.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:consumerProguardFiles"><code class="literal">consumerProguardFiles</code></a></td><td><p>ProGuard rule files to be included in the published AAR.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:crunchPngs"><code class="literal">crunchPngs</code></a></td><td><p>Whether to crunch PNGs.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:debuggable"><code class="literal">debuggable</code></a></td><td><p>Whether this build type should generate a debuggable apk.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:embedMicroApp"><code class="literal">embedMicroApp</code></a></td><td><p>Whether a linked Android Wear app should be embedded in variant using this build type.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:javaCompileOptions"><code class="literal">javaCompileOptions</code></a></td><td><p>Options for configuration Java compilation.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:jniDebuggable"><code class="literal">jniDebuggable</code></a></td><td><p>Whether this build type is configured to generate an APK with debuggable native code.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:manifestPlaceholders"><code class="literal">manifestPlaceholders</code></a></td><td><p>The manifest placeholders.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:matchingFallbacks"><code class="literal">matchingFallbacks</code></a></td><td><p>Specifies a sorted list of build types that the plugin should try to use when a direct
+variant match with a local module dependency is not possible.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:minifyEnabled"><code class="literal">minifyEnabled</code></a></td><td><p>Whether removal of unused java code is enabled.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:multiDexEnabled"><code class="literal">multiDexEnabled</code></a></td><td><p>Whether Multi-Dex is enabled for this variant.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:multiDexKeepFile"><code class="literal">multiDexKeepFile</code></a></td><td><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:multiDexKeepProguard"><code class="literal">multiDexKeepProguard</code></a></td><td><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:name"><code class="literal">name</code></a></td><td><p>Name of this build type.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:postprocessing"><code class="literal">postprocessing</code></a></td><td><div class="caution" title="Caution">Incubating</div><p>This DSL is incubating and subject to change.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:proguardFiles"><code class="literal">proguardFiles</code></a></td><td><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:pseudoLocalesEnabled"><code class="literal">pseudoLocalesEnabled</code></a></td><td><p>Specifies whether the plugin should generate resources for pseudolocales.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:renderscriptDebuggable"><code class="literal">renderscriptDebuggable</code></a></td><td><p>Whether the build type is configured to generate an apk with debuggable RenderScript code.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:renderscriptOptimLevel"><code class="literal">renderscriptOptimLevel</code></a></td><td><p>Optimization level to use by the renderscript compiler.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:shrinkResources"><code class="literal">shrinkResources</code></a></td><td><p>Whether shrinking of unused resources is enabled.
+
+Default is false;</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:signingConfig"><code class="literal">signingConfig</code></a></td><td><p>The signing configuration.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:testCoverageEnabled"><code class="literal">testCoverageEnabled</code></a></td><td><p>Whether test coverage is enabled for this build type.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:useProguard"><code class="literal">useProguard</code></a></td><td><p>Specifies whether to always use ProGuard for code and resource shrinking.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:versionNameSuffix"><code class="literal">versionNameSuffix</code></a></td><td><p>Version name suffix. It is appended to the "base" version name when calculating the final
+version name for a variant.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:zipAlignEnabled"><code class="literal">zipAlignEnabled</code></a></td><td><p>Whether zipalign is enabled for this build type.</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N10E2E"></a>Methods</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N10E31"><thead><tr><td>Method</td><td>Description</td></tr></thead><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:buildConfigField(java.lang.String, java.lang.String, java.lang.String)">buildConfigField</a>(type, name, value)</code></td><td><p>Adds a new field to the generated BuildConfig class.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:consumerProguardFile(java.lang.Object)">consumerProguardFile</a>(proguardFile)</code></td><td><p>Adds a proguard rule file to be included in the published AAR.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:consumerProguardFiles(java.lang.Object[])">consumerProguardFiles</a>(proguardFiles)</code></td><td><p>Adds proguard rule files to be included in the published AAR.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:externalNativeBuild(org.gradle.api.Action)">externalNativeBuild</a>(action)</code></td><td><p>Configure native build options.</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:initWith(com.android.builder.model.BuildType)">initWith</a>(that)</code></td><td><p>Copies all properties from the given build type.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:proguardFile(java.lang.Object)">proguardFile</a>(proguardFile)</code></td><td><p>Adds a new ProGuard configuration file.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:proguardFiles(java.lang.Object[])">proguardFiles</a>(files)</code></td><td><p>Adds new ProGuard configuration files.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:resValue(java.lang.String, java.lang.String, java.lang.String)">resValue</a>(type, name, value)</code></td><td><p>Adds a new generated resource.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:resValue(java.lang.String, java.lang.String, java.lang.String)">resValue</a>(type, name, value)</code></td><td><p>Adds a new generated resource.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:setProguardFiles(java.lang.Iterable)">setProguardFiles</a>(proguardFileIterable)</code></td><td><p>Sets the ProGuard configuration files.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N10E9E"></a>Script blocks</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N10EA1"><thead><tr><td>Block</td><td>Description</td></tr></thead><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:postprocessing(org.gradle.api.Action)"><code class="literal">postprocessing</code></a></td><td><div class="caution" title="Caution">Incubating</div><p>This DSL is incubating and subject to change.</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N10EB5"></a>Property details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:applicationIdSuffix"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">applicationIdSuffix</code></h4></div></div></div><p>Application id suffix. It is appended to the "base" application id when calculating the final
+application id for a variant.
+
+</p><p>In case there are product flavor dimensions specified, the final application id suffix
+will contain the suffix from the default product flavor, followed by the suffix from product
+flavor of the first dimension, second dimension and so on. All of these will have a dot in
+between e.g. "defaultSuffix.dimension1Suffix.dimensions2Suffix".</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:consumerProguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">consumerProguardFiles</code></h4></div></div></div><p>ProGuard rule files to be included in the published AAR.
+
+</p><p>These proguard rule files will then be used by any application project that consumes the
+AAR (if ProGuard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:crunchPngs"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">crunchPngs</code></h4></div></div></div><p>Whether to crunch PNGs.
+
+</p><p>Setting this property to <code class="literal">true</code> reduces of PNG resources that are not already
+optimally compressed. However, this process increases build times.
+
+</p><p>PNG crunching is enabled by default in the release build type and disabled by default in
+the debug build type.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:debuggable"></a><code class="classname">boolean</code> <code class="literal">debuggable</code></h4></div></div></div><p>Whether this build type should generate a debuggable apk.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:embedMicroApp"></a><code class="classname">boolean</code> <code class="literal">embedMicroApp</code></h4></div></div></div><p>Whether a linked Android Wear app should be embedded in variant using this build type.
+
+</p><p>Wear apps can be linked with the following code:
+
+</p><pre class="programlisting">dependencies {
+  freeWearApp project(:wear:free<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">') // applies to variant using the free flavor
+</span>  wearApp project(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">':wear:base'</span>) <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// applies to all other variants</span>
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:javaCompileOptions"></a><code class="classname">com.android.build.gradle.api.JavaCompileOptions</code> <code class="literal">javaCompileOptions</code></h4></div></div></div><p>Options for configuration Java compilation.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:jniDebuggable"></a><code class="classname">boolean</code> <code class="literal">jniDebuggable</code></h4></div></div></div><p>Whether this build type is configured to generate an APK with debuggable native code.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:manifestPlaceholders"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Map.html" target="_top"><code class="classname">Map</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>&gt;</code> <code class="literal">manifestPlaceholders</code></h4></div></div></div><p>The manifest placeholders.
+
+</p><p>See <a class="ulink" href="https://developer.android.com/studio/build/manifest-build-variables.html" target="_top">
+    Inject Build Variables into the Manifest</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:matchingFallbacks"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> <code class="literal">matchingFallbacks</code></h4></div></div></div><p>Specifies a sorted list of build types that the plugin should try to use when a direct
+variant match with a local module dependency is not possible.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, when you build a "freeDebug" version of your app, the
+plugin tries to match it with "freeDebug" versions of the local library modules the app
+depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>your app includes build types that a
+dependency does not</em></span>. For example, consider if your app includes a "stage" build type, but
+a dependency includes only a "debug" and "release" build type. When the plugin tries to build
+the "stage" version of your app, it won't know which version of the dependency to use, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this situation, you can use <code class="literal">matchingFallbacks</code> to specify alternative
+matches for the app's "stage" build type, as shown below:
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    buildTypes {
+        release {
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Because the dependency already includes a "release" build type,</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// you don't need to provide a list of fallbacks here.</span>
+        }
+        stage {
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of fallback build types that the</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// plugin should try to use when a dependency does not include a</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "stage" build type. You may specify as many fallbacks as you</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// like, and the plugin selects the first build type that's</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// available in the dependency.</span>
+            matchingFallbacks = [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'debug'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'qa'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'release'</span>]
+        }
+    }
+}</pre><p>Note that there is no issue when a library dependency includes a build type that your app
+does not. That's because the plugin simply never requests that build type from the
+dependency.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:minifyEnabled"></a><code class="classname">boolean</code> <code class="literal">minifyEnabled</code></h4></div></div></div><p>Whether removal of unused java code is enabled.
+
+</p><p>Default is false.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:multiDexEnabled"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">multiDexEnabled</code></h4></div></div></div><p>Whether Multi-Dex is enabled for this variant.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:multiDexKeepFile"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepFile</code></h4></div></div></div><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p><p>Classes specified in the file are appended to the main dex classes computed using
+<code class="literal">aapt</code>.
+
+</p><p>If set, the file should contain one class per line, in the following format:
+<code class="literal">com/example/MyClass.class</code></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:multiDexKeepProguard"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepProguard</code></h4></div></div></div><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p><p>If set, rules from this file are used in combination with the default rules used by the
+build system.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:name"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">name</code></h4></div></div></div><p>Name of this build type.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:postprocessing"></a><code class="classname">PostprocessingOptions</code> <code class="literal">postprocessing</code></h4></div></div></div><div class="caution" title="Caution"><p>Note: This property is <a class="ulink" href="" target="_top">incubating</a> and may change in a future version of the plugin.</p></div><p>This DSL is incubating and subject to change.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:proguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">proguardFiles</code></h4></div></div></div><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of the files.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:pseudoLocalesEnabled"></a><code class="classname">boolean</code> <code class="literal">pseudoLocalesEnabled</code></h4></div></div></div><p>Specifies whether the plugin should generate resources for pseudolocales.
+
+</p><p>A pseudolocale is a locale that simulates characteristics of languages that cause UI,
+layout, and other translation-related problems when an app is localized. Pseudolocales can
+aid your development workflow because you can test and make adjustments to your UI before you
+finalize text for translation.
+
+</p><p>When you set this property to <code class="literal">true</code> as shown below, the plugin generates
+resources for the following pseudo locales and makes them available in your connected
+device's language preferences: <code class="literal">en-XA</code> and <code class="literal">ar-XB</code>.
+
+</p><pre class="programlisting">android {
+    buildTypes {
+        debug {
+            pseudoLocalesEnabled true
+        }
+    }
+}</pre><p>When you build your app, the plugin includes the pseudolocale resources in your APK. If
+you notice that your APK does not include those locale resources, make sure your build
+configuration isn't limiting which locale resources are packaged with your APK, such as using
+the <code class="literal">resConfigs</code> property to <a class="ulink" href="https://d.android.com/studio/build/shrink-code.html#unused-alt-resources" target="_top">remove unused
+locale resources</a>.
+
+</p><p>To learn more, read <a class="ulink" href="https://d.android.com/guide/topics/resources/pseudolocales.html" target="_top">Test Your App with
+Pseudolocales</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:renderscriptDebuggable"></a><code class="classname">boolean</code> <code class="literal">renderscriptDebuggable</code></h4></div></div></div><p>Whether the build type is configured to generate an apk with debuggable RenderScript code.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:renderscriptOptimLevel"></a><code class="classname">int</code> <code class="literal">renderscriptOptimLevel</code></h4></div></div></div><p>Optimization level to use by the renderscript compiler.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:shrinkResources"></a><code class="classname">boolean</code> <code class="literal">shrinkResources</code></h4></div></div></div><p>Whether shrinking of unused resources is enabled.
+
+Default is false;</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:signingConfig"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.SigningConfig.html" target="_top"><code class="classname">SigningConfig</code></a> <code class="literal">signingConfig</code></h4></div></div></div><p>The signing configuration.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:testCoverageEnabled"></a><code class="classname">boolean</code> <code class="literal">testCoverageEnabled</code></h4></div></div></div><p>Whether test coverage is enabled for this build type.
+
+</p><p>If enabled this uses Jacoco to capture coverage and creates a report in the build
+directory.
+
+</p><p>The version of Jacoco can be configured with:
+</p><pre class="programlisting">android {
+  jacoco {
+    version = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'0.6.2.201302030002'</span>
+  }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:useProguard"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">useProguard</code></h4></div></div></div><p>Specifies whether to always use ProGuard for code and resource shrinking.
+
+</p><p>By default, when you enable code shrinking by setting <a class="ulink" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:minifyEnabled" target="_top">
+<code class="literal">minifyEnabled</code></a> to <code class="literal">true</code>, the Android plugin uses ProGuard.
+However while deploying your app using Android Studio's <a class="ulink" href="https://developer.android.com/studio/run/index.html#instant-run" target="_top">Instant Run</a>
+feature, which doesn't support ProGuard, the plugin switches to using a custom experimental
+code shrinker.
+
+</p><p>If you experience issues using the experimental code shrinker, you can disable code
+shrinking while using Instant Run by setting this property to <code class="literal">true</code>.
+
+</p><p>To learn more, read <a class="ulink" href="https://developer.android.com/studio/build/shrink-code.html" target="_top">Shrink Your Code and
+Resources</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:versionNameSuffix"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">versionNameSuffix</code></h4></div></div></div><p>Version name suffix. It is appended to the "base" version name when calculating the final
+version name for a variant.
+
+</p><p>In case there are product flavor dimensions specified, the final version name suffix will
+contain the suffix from the default product flavor, followed by the suffix from product
+flavor of the first dimension, second dimension and so on.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:zipAlignEnabled"></a><code class="classname">boolean</code> <code class="literal">zipAlignEnabled</code></h4></div></div></div><p>Whether zipalign is enabled for this build type.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1109B"></a>Method details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:buildConfigField(java.lang.String, java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">buildConfigField</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> type, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a new field to the generated BuildConfig class.
+
+</p><p>The field is generated as: <code class="literal">&lt;type&gt; &lt;name&gt; = &lt;value&gt;;</code>
+
+</p><p>This means each of these must have valid Java content. If the type is a String, then the
+value should include quotes.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:consumerProguardFile(java.lang.Object)"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> <code class="literal">consumerProguardFile</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a> proguardFile)</h4></div></div></div><p>Adds a proguard rule file to be included in the published AAR.
+
+</p><p>This proguard rule file will then be used by any application project that consume the AAR
+(if proguard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:consumerProguardFiles(java.lang.Object[])"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> <code class="literal">consumerProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>...</code> proguardFiles)</h4></div></div></div><p>Adds proguard rule files to be included in the published AAR.
+
+</p><p>This proguard rule file will then be used by any application project that consume the AAR
+(if proguard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:externalNativeBuild(org.gradle.api.Action)"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.ExternalNativeBuildOptions.html" target="_top"><code class="classname">ExternalNativeBuildOptions</code></a> <code class="literal">externalNativeBuild</code>(<code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/Action.html" target="_top"><code class="classname">Action</code></a>&lt;<a class="ulink" href="./com.android.build.gradle.internal.dsl.ExternalNativeBuildOptions.html" target="_top"><code class="classname">ExternalNativeBuildOptions</code></a>&gt;</code> action)</h4></div></div></div><p>Configure native build options.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:initWith(com.android.builder.model.BuildType)"></a><a class="ulink" href="./com.android.builder.core.DefaultBuildType.html" target="_top"><code class="classname">DefaultBuildType</code></a> <code class="literal">initWith</code>(<code class="classname">BuildType</code> that)</h4></div></div></div><p>Copies all properties from the given build type.
+
+</p><p>It can be used like this:
+</p><pre class="programlisting">android.buildTypes {
+    customBuildType {
+        initWith debug
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// customize...</span>
+        }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:proguardFile(java.lang.Object)"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> <code class="literal">proguardFile</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a> proguardFile)</h4></div></div></div><p>Adds a new ProGuard configuration file.
+
+</p><p><code class="literal">proguardFile getDefaultProguardFile('proguard-android.txt')</code></p><p>There are 2 default rules files
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+    </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p>They are located in the SDK. Using <code class="literal">getDefaultProguardFile(String filename)</code> will return the
+full path to the files. They are identical except for enabling optimizations.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:proguardFiles(java.lang.Object[])"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> <code class="literal">proguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>...</code> files)</h4></div></div></div><p>Adds new ProGuard configuration files.
+
+</p><p>There are 2 default rules files
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+    </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p>They are located in the SDK. Using <code class="literal">getDefaultProguardFile(String filename)</code> will return the
+full path to the files. They are identical except for enabling optimizations.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:resValue(java.lang.String, java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">resValue</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> type, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a new generated resource.
+
+</p><p>This is equivalent to specifying a resource in res/values.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/resources/available-resources.html" target="_top">Resource Types</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:resValue(java.lang.String, java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">resValue</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> type, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a new generated resource.
+
+</p><p>This is equivalent to specifying a resource in res/values.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/resources/available-resources.html" target="_top">Resource Types</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:setProguardFiles(java.lang.Iterable)"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> <code class="literal">setProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Iterable.html" target="_top"><code class="classname">Iterable</code></a>&lt;?&gt;</code> proguardFileIterable)</h4></div></div></div><p>Sets the ProGuard configuration files.
+
+</p><p>There are 2 default rules files
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+    </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p>They are located in the SDK. Using <code class="literal">getDefaultProguardFile(String filename)</code> will return the
+full path to the files. They are identical except for enabling optimizations.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N111CE"></a>Script block details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.BuildType:postprocessing(org.gradle.api.Action)"></a><code class="literal">postprocessing</code> { }</h4></div></div></div><div class="caution" title="Caution"><p>Note: This script block is <a class="ulink" href="" target="_top">incubating</a> and may change in a future version of the plugin.</p></div><p>This DSL is incubating and subject to change.</p><div class="segmentedlist"><dl><dt>Delegates to:</dt><dd><code class="classname">PostprocessingOptions</code> from <a class="link" href="com.android.build.gradle.internal.dsl.BuildType.html#com.android.build.gradle.internal.dsl.BuildType:postprocessing"><code class="literal">postprocessing</code></a></dd></dl></div></div></div></div><div id="copyright">
+                       Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+                       For details and restrictions, see the <a href="http://developer.android.com/license.html">Content License</a>.
+                   </div></div></body></html>
