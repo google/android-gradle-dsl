@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>ProductFlavor - Android Plugin 3.2.0-dev DSL Reference</title><link type="text/css" rel="stylesheet" href="base.css"><link type="text/css" rel="stylesheet" href="docs.css"><link type="text/css" rel="stylesheet" href="dsl.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="up" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="prev" href="com.android.build.gradle.internal.dsl.PackagingOptions.html" title="PackagingOptions - Android Plugin 3.2.0-dev DSL Reference"><link rel="next" href="com.android.build.gradle.api.AndroidSourceSet.html" title="AndroidSourceSet - Android Plugin 3.2.0-dev DSL Reference"></head><body><div class="sidebar"><ul><li><a xmlns:xslthl="http://xslthl.sf.net" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference">Home</a></li><li class="sidebarHeading selected">ProductFlavor</li><ul class="sections"><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#N13216" title="Properties">Properties</a></li><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#N13313" title="Methods">Methods</a></li></ul><li class="sidebarHeading">Extension types</li><li><a class="link" href="com.android.build.gradle.AppExtension.html"><code class="literal">AppExtension</code></a></li><li><a class="link" href="com.android.build.gradle.LibraryExtension.html"><code class="literal">LibraryExtension</code></a></li><li><a class="link" href="com.android.build.gradle.TestExtension.html"><code class="literal">TestExtension</code></a></li><li><a class="link" href="com.android.build.gradle.FeatureExtension.html"><code class="literal">FeatureExtension</code></a></li><li class="sidebarHeading">Configuration blocks</li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:aaptOptions(org.gradle.api.Action)"><code class="literal">aaptOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:adbOptions(org.gradle.api.Action)"><code class="literal">adbOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:buildTypes(org.gradle.api.Action)"><code class="literal">buildTypes { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:compileOptions(org.gradle.api.Action)"><code class="literal">compileOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dataBinding(org.gradle.api.Action)"><code class="literal">dataBinding { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:defaultConfig(org.gradle.api.Action)"><code class="literal">defaultConfig { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dexOptions(org.gradle.api.Action)"><code class="literal">dexOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:externalNativeBuild(org.gradle.api.Action)"><code class="literal">externalNativeBuild { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:jacoco(org.gradle.api.Action)"><code class="literal">jacoco { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:lintOptions(org.gradle.api.Action)"><code class="literal">lintOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:packagingOptions(org.gradle.api.Action)"><code class="literal">packagingOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:productFlavors(org.gradle.api.Action)"><code class="literal">productFlavors { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:signingConfigs(org.gradle.api.Action)"><code class="literal">signingConfigs { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:sourceSets(org.gradle.api.Action)"><code class="literal">sourceSets { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:splits(org.gradle.api.Action)"><code class="literal">splits { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:testOptions(org.gradle.api.Action)"><code class="literal">testOptions { }</code></a></li></ul></div><div class="content"><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="com.android.build.gradle.internal.dsl.ProductFlavor"></a>ProductFlavor</h1></div></div></div><p>Encapsulates all product flavors properties for this project.
+
+</p><p>Product flavors represent different versions of your project that you expect to co-exist on a
+single device, the Google Play store, or repository. For example, you can configure 'demo' and
+'full' product flavors for your app, and each of those flavors can specify different features,
+device requirements, resources, and application ID's--while sharing common source code and
+resources. So, product flavors allow you to output different versions of your project by simply
+changing only the components and settings that are different between them.
+
+</p><p>Configuring product flavors is similar to <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#build-types" target="_top">configuring
+build types</a>: add them to the <code class="literal">productFlavors</code> block of your module's <code class="literal">
+build.gradle</code> file and configure the settings you want. Product flavors support the same
+properties as the <a class="ulink" href="./com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:defaultConfig" target="_top"><code class="classname">BaseExtension.getDefaultConfig()</code></a> block&mdash;this is
+because <code class="literal">defaultConfig</code> defines a <a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a> object that the plugin uses as
+the base configuration for all other flavors. Each flavor you configure can then override any of
+the default values in <code class="literal">defaultConfig</code>, such as the <a class="ulink" href="https://d.android.com/studio/build/application-id.html" target="_top"><code class="literal">applicationId</code></a>.
+
+</p><p>When using Android plugin 3.0.0 and higher, <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:dimension" target="_top"><span class="emphasis"><em>each
+flavor must belong to a <code class="literal">dimension</code></em></span></a>.
+
+</p><p>When you configure product flavors, the Android plugin automatically combines them with your
+<a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> configurations to <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">create build variants</a>.
+If the plugin creates certain build variants that you don't want, you can <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#filter-variants" target="_top">filter
+variants using <code class="literal">android.variantFilter</code></a>.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N13216"></a>Properties</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N13219"><thead><tr><td>Property</td><td>Description</td></tr></thead><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:applicationId"><code class="literal">applicationId</code></a></td><td><p>The application ID.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:applicationIdSuffix"><code class="literal">applicationIdSuffix</code></a></td><td><p>Application id suffix. It is appended to the "base" application id when calculating the final
+application id for a variant.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFiles"><code class="literal">consumerProguardFiles</code></a></td><td><p>ProGuard rule files to be included in the published AAR.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:dimension"><code class="literal">dimension</code></a></td><td><p>Specifies the flavor dimension that this product flavor belongs to.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:externalNativeBuild"><code class="literal">externalNativeBuild</code></a></td><td><p>Encapsulates per-variant CMake and ndk-build configurations for your external native build.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:generatedDensities"><code class="literal">generatedDensities</code></a></td><td><div class="caution" title="Caution">Deprecated</div><p>Deprecated equivalent of <code class="literal">vectorDrawablesOptions.generatedDensities</code>.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:javaCompileOptions"><code class="literal">javaCompileOptions</code></a></td><td><p>Options for configuration Java compilation.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:manifestPlaceholders"><code class="literal">manifestPlaceholders</code></a></td><td><p>The manifest placeholders.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:matchingFallbacks"><code class="literal">matchingFallbacks</code></a></td><td><p>Specifies a sorted list of product flavors that the plugin should try to use when a direct
+variant match with a local module dependency is not possible.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:multiDexEnabled"><code class="literal">multiDexEnabled</code></a></td><td><p>Whether Multi-Dex is enabled for this variant.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:multiDexKeepFile"><code class="literal">multiDexKeepFile</code></a></td><td><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:multiDexKeepProguard"><code class="literal">multiDexKeepProguard</code></a></td><td><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:ndk"><code class="literal">ndk</code></a></td><td><p>Encapsulates per-variant configurations for the NDK, such as ABI filters.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:proguardFiles"><code class="literal">proguardFiles</code></a></td><td><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:signingConfig"><code class="literal">signingConfig</code></a></td><td><p>Signing config used by this product flavor.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testApplicationId"><code class="literal">testApplicationId</code></a></td><td><p>Test application ID.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testFunctionalTest"><code class="literal">testFunctionalTest</code></a></td><td><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testHandleProfiling"><code class="literal">testHandleProfiling</code></a></td><td><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunner"><code class="literal">testInstrumentationRunner</code></a></td><td><p>Test instrumentation runner class name.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArguments"><code class="literal">testInstrumentationRunnerArguments</code></a></td><td><p>Test instrumentation runner custom arguments.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:vectorDrawables"><code class="literal">vectorDrawables</code></a></td><td><p>Options to configure the build-time support for <code class="literal">vector</code> drawables.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:versionCode"><code class="literal">versionCode</code></a></td><td><p>Version code.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:versionName"><code class="literal">versionName</code></a></td><td><p>Version name.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:versionNameSuffix"><code class="literal">versionNameSuffix</code></a></td><td><p>Version name suffix. It is appended to the "base" version name when calculating the final
+version name for a variant.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:wearAppUnbundled"><code class="literal">wearAppUnbundled</code></a></td><td><p>Returns whether to enable unbundling mode for embedded wear app.
+
+If true, this enables the app to transition from an embedded wear app to one
+distributed by the play store directly.</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N13313"></a>Methods</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N13316"><thead><tr><td>Method</td><td>Description</td></tr></thead><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:buildConfigField(java.lang.String, java.lang.String, java.lang.String)">buildConfigField</a>(type, name, value)</code></td><td><p>Adds a new field to the generated BuildConfig class.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFile(java.lang.Object)">consumerProguardFile</a>(proguardFile)</code></td><td><p>Adds a proguard rule file to be included in the published AAR.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFiles(java.lang.Object[])">consumerProguardFiles</a>(proguardFiles)</code></td><td><p>Adds proguard rule files to be included in the published AAR.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:maxSdkVersion(int)">maxSdkVersion</a>(maxSdkVersion)</code></td><td><p>Sets the maximum SDK version to the given value.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:minSdkVersion(int)">minSdkVersion</a>(minSdkVersion)</code></td><td><p>Sets minimum SDK version.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:minSdkVersion(java.lang.String)">minSdkVersion</a>(minSdkVersion)</code></td><td><p>Sets minimum SDK version.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String)">missingDimensionStrategy</a>(dimension, requestedValue)</code></td><td><p>Specifies a flavor that the plugin should try to use from a given dimension in a dependency.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String[])">missingDimensionStrategy</a>(dimension, requestedValues)</code></td><td><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.util.List)">missingDimensionStrategy</a>(dimension, requestedValues)</code></td><td><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:proguardFile(java.lang.Object)">proguardFile</a>(proguardFile)</code></td><td><p>Specifies a ProGuard configuration file that the plugin should use.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:proguardFiles(java.lang.Object[])">proguardFiles</a>(files)</code></td><td><p>Specifies ProGuard configuration files that the plugin should use.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:resConfig(java.lang.String)">resConfig</a>(config)</code></td><td><p>Specifies an <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resource</a> to keep.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:resConfigs(java.lang.String[])">resConfigs</a>(config)</code></td><td><p>Specifies a list of <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resources</a> to keep.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:resConfigs(java.util.Collection)">resConfigs</a>(config)</code></td><td><p>Specifies a list of <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resources</a> to keep.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:resValue(java.lang.String, java.lang.String, java.lang.String)">resValue</a>(type, name, value)</code></td><td><p>Adds a new generated resource.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:setConsumerProguardFiles(java.lang.Iterable)">setConsumerProguardFiles</a>(proguardFileIterable)</code></td><td><p>Specifies a proguard rule file to be included in the published AAR.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:setProguardFiles(java.lang.Iterable)">setProguardFiles</a>(proguardFileIterable)</code></td><td><p>Sets the ProGuard configuration files.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:setTestProguardFiles(java.lang.Iterable)">setTestProguardFiles</a>(files)</code></td><td><p>Specifies proguard rule files to be used when processing test code.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:targetSdkVersion(int)">targetSdkVersion</a>(targetSdkVersion)</code></td><td><p>Sets the target SDK version to the given value.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:targetSdkVersion(java.lang.String)">targetSdkVersion</a>(targetSdkVersion)</code></td><td><p>Sets the target SDK version to the given value.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArgument(java.lang.String, java.lang.String)">testInstrumentationRunnerArgument</a>(key, value)</code></td><td><p>Adds a custom argument to the test instrumentation runner, e.g:
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArguments(java.util.Map)">testInstrumentationRunnerArguments</a>(args)</code></td><td><p>Adds custom arguments to the test instrumentation runner, e.g:
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testProguardFile(java.lang.Object)">testProguardFile</a>(proguardFile)</code></td><td><p>Adds a proguard rule file to be used when processing test code.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.internal.dsl.ProductFlavor.html#com.android.build.gradle.internal.dsl.ProductFlavor:testProguardFiles(java.lang.Object[])">testProguardFiles</a>(proguardFiles)</code></td><td><p>Adds proguard rule files to be used when processing test code.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1341B"></a>Script blocks</h3></div></div></div><p>No script blocks</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N13420"></a>Property details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:applicationId"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">applicationId</code></h4></div></div></div><p>The application ID.
+
+</p><p>See <a class="ulink" href="https://developer.android.com/studio/build/application-id.html" target="_top">Set the Application ID</a></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:applicationIdSuffix"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">applicationIdSuffix</code></h4></div></div></div><p>Application id suffix. It is appended to the "base" application id when calculating the final
+application id for a variant.
+
+</p><p>In case there are product flavor dimensions specified, the final application id suffix
+will contain the suffix from the default product flavor, followed by the suffix from product
+flavor of the first dimension, second dimension and so on. All of these will have a dot in
+between e.g. "defaultSuffix.dimension1Suffix.dimensions2Suffix".</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">consumerProguardFiles</code></h4></div></div></div><p>ProGuard rule files to be included in the published AAR.
+
+</p><p>These proguard rule files will then be used by any application project that consumes the
+AAR (if ProGuard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:dimension"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">dimension</code></h4></div></div></div><p>Specifies the flavor dimension that this product flavor belongs to.
+
+</p><p>When configuring product flavors with Android plugin 3.0.0 and higher, you must specify at
+least one flavor dimension, using the <a class="ulink" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:flavorDimensions(java.lang.String[])" target="_top">
+<code class="literal">flavorDimensions</code></a> property, and then assign each flavor to a dimension.
+Otherwise, you will get the following build error:
+
+</p><pre class="programlisting">Error:All flavors must now belong to a named flavor dimension.
+The flavor <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'flavor_name'</span> is not assigned to a flavor dimension.</pre><p>By default, when you specify only one dimension, all flavors you configure automatically
+belong to that dimension. If you specify more than one dimension, you need to manually assign
+each flavor to a dimension, as shown in the sample below:
+
+</p><pre class="programlisting">android {
+    ...
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies the flavor dimensions you want to use. The order in which you</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// list each dimension determines its priority, from highest to lowest,</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// when Gradle merges variant sources and configurations. You must assign</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// each product flavor you configure to one of the flavor dimensions.</span>
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'api'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+
+    productFlavors {
+      demo {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Assigns this product flavor to the 'version' flavor dimension.</span>
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+        ...
+    }
+
+      full {
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+        ...
+      }
+
+      minApi2<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Assigns this flavor to the 'api' dimension.</span>
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'api'</span>
+        minSdkVersion <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'24'</span>
+        versionNameSuffix <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"-minApi24"</span>
+        ...
+      }
+
+      minApi2<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span> {
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"api"</span>
+        minSdkVersion <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'21'</span>
+        versionNameSuffix <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"-minApi21"</span>
+        ...
+      }
+   }
+}</pre><p>To learn more about configuring flavor dimensions, read <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#flavor-dimensions" target="_top">
+Combine multiple flavors</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:externalNativeBuild"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.ExternalNativeBuildOptions.html" target="_top"><code class="classname">ExternalNativeBuildOptions</code></a> <code class="literal">externalNativeBuild</code></h4></div></div></div><p>Encapsulates per-variant CMake and ndk-build configurations for your external native build.
+
+</p><p>To learn more, see <a class="ulink" href="http://developer.android.com/studio/projects/add-native-code.html#" target="_top">Add C and C++ Code
+to Your Project</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:generatedDensities"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Set.html" target="_top"><code class="classname">Set</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> <code class="literal">generatedDensities</code></h4></div></div></div><div class="caution" title="Caution"><p>Note: This property is <a class="ulink" href="" target="_top">deprecated</a> and will be removed in a future version of the plugin.</p></div><p>Deprecated equivalent of <code class="literal">vectorDrawablesOptions.generatedDensities</code>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:javaCompileOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.JavaCompileOptions.html" target="_top"><code class="classname">JavaCompileOptions</code></a> <code class="literal">javaCompileOptions</code></h4></div></div></div><p>Options for configuration Java compilation.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:manifestPlaceholders"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Map.html" target="_top"><code class="classname">Map</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>&gt;</code> <code class="literal">manifestPlaceholders</code></h4></div></div></div><p>The manifest placeholders.
+
+</p><p>See <a class="ulink" href="https://developer.android.com/studio/build/manifest-build-variables.html" target="_top">
+    Inject Build Variables into the Manifest</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:matchingFallbacks"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> <code class="literal">matchingFallbacks</code></h4></div></div></div><p>Specifies a sorted list of product flavors that the plugin should try to use when a direct
+variant match with a local module dependency is not possible.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, when you build a "freeDebug" version of your app, the
+plugin tries to match it with "freeDebug" versions of the local library modules the app
+depends on.
+
+</p><p>However, there may be situations in which, for a given flavor dimension that exists in
+both the app and its library dependencies, <span class="emphasis"><em>your app includes flavors that a dependency
+does not</em></span>. For example, consider if both your app and its library dependencies include a
+"tier" flavor dimension. However, the "tier" dimension in the app includes "free" and "paid"
+flavors, but one of its dependencies includes only "demo" and "paid" flavors for the same
+dimension. When the plugin tries to build the "free" version of your app, it won't know which
+version of the dependency to use, and you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this situation, you should use <code class="literal">matchingFallbacks</code> to specify alternative
+matches for the app's "free" product flavor, as shown below:
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        paid {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Because the dependency already includes a "paid" flavor in its</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "tier" dimension, you don't need to provide a list of fallbacks</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "paid" flavor.</span>
+        }
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of fallback flavors that the plugin</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// should try to use when a dependency's matching dimension does</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// not include a "free" flavor. You may specify as many</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// fallbacks as you like, and the plugin selects the first flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// that's available in the dependency's "tier" dimension.</span>
+            matchingFallbacks = [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'demo'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'trial'</span>]
+        }
+    }
+}</pre><p>Note that, for a given flavor dimension that exists in both the app and its library
+dependencies, there is no issue when a library includes a product flavor that your app does
+not. That's because the plugin simply never requests that flavor from the dependency.
+
+</p><p>If instead you are trying to resolve an issue in which <span class="emphasis"><em>a library dependency includes a
+flavor dimension that your app does not</em></span>, use <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html#com.android.build.gradle.internal.dsl.DefaultConfig:missingDimensionStrategy(java.lang.String,%0Ajava.lang.String)" target="_top"> <code class="literal">missingDimensionStrategy</code></a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:multiDexEnabled"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">multiDexEnabled</code></h4></div></div></div><p>Whether Multi-Dex is enabled for this variant.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:multiDexKeepFile"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepFile</code></h4></div></div></div><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p><p>Classes specified in the file are appended to the main dex classes computed using
+<code class="literal">aapt</code>.
+
+</p><p>If set, the file should contain one class per line, in the following format:
+<code class="literal">com/example/MyClass.class</code></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:multiDexKeepProguard"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepProguard</code></h4></div></div></div><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p><p>If set, rules from this file are used in combination with the default rules used by the
+build system.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:ndk"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.NdkOptions.html" target="_top"><code class="classname">NdkOptions</code></a> <code class="literal">ndk</code></h4></div></div></div><p>Encapsulates per-variant configurations for the NDK, such as ABI filters.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:proguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">proguardFiles</code></h4></div></div></div><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of the files.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:signingConfig"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.SigningConfig.html" target="_top"><code class="classname">SigningConfig</code></a> <code class="literal">signingConfig</code></h4></div></div></div><p>Signing config used by this product flavor.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testApplicationId"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">testApplicationId</code></h4></div></div></div><p>Test application ID.
+
+</p><p>See <a class="ulink" href="https://developer.android.com/studio/build/application-id.html" target="_top">Set the Application ID</a></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testFunctionalTest"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">testFunctionalTest</code></h4></div></div></div><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testHandleProfiling"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">testHandleProfiling</code></h4></div></div></div><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunner"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">testInstrumentationRunner</code></h4></div></div></div><p>Test instrumentation runner class name.
+
+</p><p>This is a fully qualified class name of the runner, e.g.
+<code class="literal">android.test.InstrumentationTestRunner</code>
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArguments"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Map.html" target="_top"><code class="classname">Map</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> <code class="literal">testInstrumentationRunnerArguments</code></h4></div></div></div><p>Test instrumentation runner custom arguments.
+
+</p><p>e.g. <code class="literal">[key: "value"]</code> will give <code class="literal">
+adb shell am instrument -w <span class="emphasis"><em>-e key value</em></span> com.example</code>...".
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/instrumentation-element.html" target="_top">
+instrumentation</a>.
+
+</p><p>Test runner arguments can also be specified from the command line:
+
+</p><pre class="programlisting">./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.size=medium
+./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.foo=bar</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:vectorDrawables"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.VectorDrawablesOptions.html" target="_top"><code class="classname">VectorDrawablesOptions</code></a> <code class="literal">vectorDrawables</code></h4></div></div></div><p>Options to configure the build-time support for <code class="literal">vector</code> drawables.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:versionCode"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Integer.html" target="_top"><code class="classname">Integer</code></a> <code class="literal">versionCode</code></h4></div></div></div><p>Version code.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/tools/publishing/versioning.html" target="_top">Versioning Your Application</a></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:versionName"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">versionName</code></h4></div></div></div><p>Version name.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/tools/publishing/versioning.html" target="_top">Versioning Your Application</a></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:versionNameSuffix"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">versionNameSuffix</code></h4></div></div></div><p>Version name suffix. It is appended to the "base" version name when calculating the final
+version name for a variant.
+
+</p><p>In case there are product flavor dimensions specified, the final version name suffix will
+contain the suffix from the default product flavor, followed by the suffix from product
+flavor of the first dimension, second dimension and so on.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:wearAppUnbundled"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">wearAppUnbundled</code></h4></div></div></div><p>Returns whether to enable unbundling mode for embedded wear app.
+
+If true, this enables the app to transition from an embedded wear app to one
+distributed by the play store directly.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1364F"></a>Method details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:buildConfigField(java.lang.String, java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">buildConfigField</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> type, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a new field to the generated BuildConfig class.
+
+</p><p>The field is generated as: <code class="literal">&lt;type&gt; &lt;name&gt; = &lt;value&gt;;</code>
+
+</p><p>This means each of these must have valid Java content. If the type is a String, then the
+value should include quotes.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFile(java.lang.Object)"></a><code class="classname">void</code> <code class="literal">consumerProguardFile</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a> proguardFile)</h4></div></div></div><p>Adds a proguard rule file to be included in the published AAR.
+
+</p><p>This proguard rule file will then be used by any application project that consume the AAR
+(if proguard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:consumerProguardFiles(java.lang.Object[])"></a><code class="classname">void</code> <code class="literal">consumerProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>...</code> proguardFiles)</h4></div></div></div><p>Adds proguard rule files to be included in the published AAR.
+
+</p><p>This proguard rule file will then be used by any application project that consume the AAR
+(if proguard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:maxSdkVersion(int)"></a><code class="classname">void</code> <code class="literal">maxSdkVersion</code>(<code class="classname">int</code> maxSdkVersion)</h4></div></div></div><p>Sets the maximum SDK version to the given value.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_top">
+uses-sdk element documentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:minSdkVersion(int)"></a><code class="classname">void</code> <code class="literal">minSdkVersion</code>(<code class="classname">int</code> minSdkVersion)</h4></div></div></div><p>Sets minimum SDK version.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_top">
+uses-sdk element documentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:minSdkVersion(java.lang.String)"></a><code class="classname">void</code> <code class="literal">minSdkVersion</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> minSdkVersion)</h4></div></div></div><p>Sets minimum SDK version.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_top">
+uses-sdk element documentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> requestedValue)</h4></div></div></div><p>Specifies a flavor that the plugin should try to use from a given dimension in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a flavor that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+        }
+        paid {}
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String[])"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>...</code> requestedValues)</h4></div></div></div><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of flavors that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor. You can include additional flavor names to provide a</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sorted list of fallbacks for the dimension.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'arm64'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+        }
+        paid {}
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:missingDimensionStrategy(java.lang.String, java.util.List)"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> requestedValues)</h4></div></div></div><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of flavors that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor. You can include additional flavor names to provide a</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sorted list of fallbacks for the dimension.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'arm64'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+        }
+        paid {}
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:proguardFile(java.lang.Object)"></a><code class="classname">void</code> <code class="literal">proguardFile</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a> proguardFile)</h4></div></div></div><p>Specifies a ProGuard configuration file that the plugin should use.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of each file.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:proguardFiles(java.lang.Object[])"></a><code class="classname">void</code> <code class="literal">proguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>...</code> files)</h4></div></div></div><p>Specifies ProGuard configuration files that the plugin should use.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of each file.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:resConfig(java.lang.String)"></a><code class="classname">void</code> <code class="literal">resConfig</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> config)</h4></div></div></div><p>Specifies an <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resource</a> to keep.
+
+</p><p>For example, if you are using a library that includes language resources (such as
+AppCompat or Google Play Services), then your APK includes all translated language strings
+for the messages in those libraries whether the rest of your app is translated to the same
+languages or not. If you'd like to keep only the language that your app officially supports,
+you can specify those languages using the <code class="literal">resConfig</code> property, as shown in the
+sample below. Any resources for languages not specified are removed.
+
+</p><pre class="programlisting">android {
+    defaultConfig {
+        ...
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Keeps language resources for only the locale specified below.</span>
+        resConfig <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"en"</span>
+    }
+}</pre><p>You can also use this property to filter resources for screen densities. For example,
+specifying <code class="literal">hdpi</code> removes all other screen density resources (such as <code class="literal">mdpi
+</code>, <code class="literal">xhdpi</code>, etc) from the final APK.
+
+</p><p><span class="emphasis"><em>Note:</em></span> <code class="literal">auto</code> is no longer supported because it created a number of
+issues with multi-module projects. Instead, you should specify the locale that your app
+supports, as shown in the sample above. Android plugin 3.1.0 and higher ignore the <code class="literal">auto
+</code> argument, and Gradle packages all string resources your app and its dependencies
+provide.
+
+</p><p>To learn more, see <a class="ulink" href="https://d.android.com/studio/build/shrink-code.html#unused-alt-resources" target="_top">Remove unused
+alternative resources</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:resConfigs(java.lang.String[])"></a><code class="classname">void</code> <code class="literal">resConfigs</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>...</code> config)</h4></div></div></div><p>Specifies a list of <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resources</a> to keep.
+
+</p><p>For example, if you are using a library that includes language resources (such as
+AppCompat or Google Play Services), then your APK includes all translated language strings
+for the messages in those libraries whether the rest of your app is translated to the same
+languages or not. If you'd like to keep only the languages that your app officially supports,
+you can specify those languages using the <code class="literal">resConfigs</code> property, as shown in the
+sample below. Any resources for languages not specified are removed.
+
+</p><pre class="programlisting">android {
+    defaultConfig {
+        ...
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Keeps language resources for only the locales specified below.</span>
+        resConfigs <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"en"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"fr"</span>
+    }
+}</pre><p>You can also use this property to filter resources for screen densities. For example,
+specifying <code class="literal">hdpi</code> removes all other screen density resources (such as <code class="literal">mdpi
+</code>, <code class="literal">xhdpi</code>, etc) from the final APK.
+
+</p><p><span class="emphasis"><em>Note:</em></span> <code class="literal">auto</code> is no longer supported because it created a number of
+issues with multi-module projects. Instead, you should specify a list of locales that your
+app supports, as shown in the sample above. Android plugin 3.1.0 and higher ignore the <code class="literal">
+auto</code> argument, and Gradle packages all string resources your app and its dependencies
+provide.
+
+</p><p>To learn more, see <a class="ulink" href="https://d.android.com/studio/build/shrink-code.html#unused-alt-resources" target="_top">Remove unused
+alternative resources</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:resConfigs(java.util.Collection)"></a><code class="classname">void</code> <code class="literal">resConfigs</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Collection.html" target="_top"><code class="classname">Collection</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> config)</h4></div></div></div><p>Specifies a list of <a class="ulink" href="https://d.android.com/guide/topics/resources/providing-resources.html#AlternativeResources" target="_top">
+alternative resources</a> to keep.
+
+</p><p>For example, if you are using a library that includes language resources (such as
+AppCompat or Google Play Services), then your APK includes all translated language strings
+for the messages in those libraries whether the rest of your app is translated to the same
+languages or not. If you'd like to keep only the languages that your app officially supports,
+you can specify those languages using the <code class="literal">resConfigs</code> property, as shown in the
+sample below. Any resources for languages not specified are removed.
+
+</p><pre class="programlisting">android {
+    defaultConfig {
+        ...
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Keeps language resources for only the locales specified below.</span>
+        resConfigs <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"en"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"fr"</span>
+    }
+}</pre><p>You can also use this property to filter resources for screen densities. For example,
+specifying <code class="literal">hdpi</code> removes all other screen density resources (such as <code class="literal">mdpi
+</code>, <code class="literal">xhdpi</code>, etc) from the final APK.
+
+</p><p><span class="emphasis"><em>Note:</em></span> <code class="literal">auto</code> is no longer supported because it created a number of
+issues with multi-module projects. Instead, you should specify a list of locales that your
+app supports, as shown in the sample above. Android plugin 3.1.0 and higher ignore the <code class="literal">
+auto</code> argument, and Gradle packages all string resources your app and its dependencies
+provide.
+
+</p><p>To learn more, see <a class="ulink" href="https://d.android.com/studio/build/shrink-code.html#unused-alt-resources" target="_top">Remove unused
+alternative resources</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:resValue(java.lang.String, java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">resValue</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> type, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a new generated resource.
+
+</p><p>This is equivalent to specifying a resource in res/values.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/resources/available-resources.html" target="_top">Resource
+Types</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:setConsumerProguardFiles(java.lang.Iterable)"></a><code class="classname">void</code> <code class="literal">setConsumerProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Iterable.html" target="_top"><code class="classname">Iterable</code></a>&lt;?&gt;</code> proguardFileIterable)</h4></div></div></div><p>Specifies a proguard rule file to be included in the published AAR.
+
+</p><p>This proguard rule file will then be used by any application project that consume the AAR
+(if proguard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:setProguardFiles(java.lang.Iterable)"></a><code class="classname">void</code> <code class="literal">setProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Iterable.html" target="_top"><code class="classname">Iterable</code></a>&lt;?&gt;</code> proguardFileIterable)</h4></div></div></div><p>Sets the ProGuard configuration files.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of the files.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:setTestProguardFiles(java.lang.Iterable)"></a><code class="classname">void</code> <code class="literal">setTestProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Iterable.html" target="_top"><code class="classname">Iterable</code></a>&lt;?&gt;</code> files)</h4></div></div></div><p>Specifies proguard rule files to be used when processing test code.
+
+</p><p>Test code needs to be processed to apply the same obfuscation as was done to main code.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:targetSdkVersion(int)"></a><code class="classname">void</code> <code class="literal">targetSdkVersion</code>(<code class="classname">int</code> targetSdkVersion)</h4></div></div></div><p>Sets the target SDK version to the given value.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_top">
+uses-sdk element documentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:targetSdkVersion(java.lang.String)"></a><code class="classname">void</code> <code class="literal">targetSdkVersion</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> targetSdkVersion)</h4></div></div></div><p>Sets the target SDK version to the given value.
+
+</p><p>See <a class="ulink" href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html" target="_top">
+uses-sdk element documentation</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArgument(java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">testInstrumentationRunnerArgument</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> key, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> value)</h4></div></div></div><p>Adds a custom argument to the test instrumentation runner, e.g:
+
+</p><pre class="programlisting">testInstrumentationRunnerArgument <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"size"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"medium"</span></pre><p>Test runner arguments can also be specified from the command line:
+
+</p><pre class="programlisting">./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.size=medium
+./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.foo=bar</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testInstrumentationRunnerArguments(java.util.Map)"></a><code class="classname">void</code> <code class="literal">testInstrumentationRunnerArguments</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Map.html" target="_top"><code class="classname">Map</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> args)</h4></div></div></div><p>Adds custom arguments to the test instrumentation runner, e.g:
+
+</p><pre class="programlisting">testInstrumentationRunnerArguments(size: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"medium"</span>, foo: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"bar"</span>)</pre><p>Test runner arguments can also be specified from the command line:
+
+</p><pre class="programlisting">./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.size=medium
+./gradlew connectedAndroidTest -Pandroid.testInstrumentationRunnerArguments.foo=bar</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testProguardFile(java.lang.Object)"></a><code class="classname">void</code> <code class="literal">testProguardFile</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a> proguardFile)</h4></div></div></div><p>Adds a proguard rule file to be used when processing test code.
+
+</p><p>Test code needs to be processed to apply the same obfuscation as was done to main code.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.internal.dsl.ProductFlavor:testProguardFiles(java.lang.Object[])"></a><code class="classname">void</code> <code class="literal">testProguardFiles</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>...</code> proguardFiles)</h4></div></div></div><p>Adds proguard rule files to be used when processing test code.
+
+</p><p>Test code needs to be processed to apply the same obfuscation as was done to main code.</p></div></div></div><div id="copyright">
+                       Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+                       For details and restrictions, see the <a href="http://developer.android.com/license.html">Content License</a>.
+                   </div></div></body></html>

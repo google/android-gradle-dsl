@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>DefaultProductFlavor - Android Plugin 3.2.0-dev DSL Reference</title><link type="text/css" rel="stylesheet" href="base.css"><link type="text/css" rel="stylesheet" href="docs.css"><link type="text/css" rel="stylesheet" href="dsl.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="up" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="prev" href="com.android.build.gradle.internal.dsl.DataBindingOptions.html" title="DataBindingOptions - Android Plugin 3.2.0-dev DSL Reference"><link rel="next" href="com.android.build.gradle.internal.dsl.BaseFlavor.html" title="BaseFlavor - Android Plugin 3.2.0-dev DSL Reference"></head><body><div class="sidebar"><ul><li><a xmlns:xslthl="http://xslthl.sf.net" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference">Home</a></li><li class="sidebarHeading selected">DefaultProductFlavor</li><ul class="sections"><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.builder.core.DefaultProductFlavor.html#N113EC" title="Properties">Properties</a></li><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.builder.core.DefaultProductFlavor.html#N1142E" title="Methods">Methods</a></li></ul><li class="sidebarHeading">Extension types</li><li><a class="link" href="com.android.build.gradle.AppExtension.html"><code class="literal">AppExtension</code></a></li><li><a class="link" href="com.android.build.gradle.LibraryExtension.html"><code class="literal">LibraryExtension</code></a></li><li><a class="link" href="com.android.build.gradle.TestExtension.html"><code class="literal">TestExtension</code></a></li><li><a class="link" href="com.android.build.gradle.FeatureExtension.html"><code class="literal">FeatureExtension</code></a></li><li class="sidebarHeading">Configuration blocks</li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:aaptOptions(org.gradle.api.Action)"><code class="literal">aaptOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:adbOptions(org.gradle.api.Action)"><code class="literal">adbOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:buildTypes(org.gradle.api.Action)"><code class="literal">buildTypes { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:compileOptions(org.gradle.api.Action)"><code class="literal">compileOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dataBinding(org.gradle.api.Action)"><code class="literal">dataBinding { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:defaultConfig(org.gradle.api.Action)"><code class="literal">defaultConfig { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dexOptions(org.gradle.api.Action)"><code class="literal">dexOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:externalNativeBuild(org.gradle.api.Action)"><code class="literal">externalNativeBuild { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:jacoco(org.gradle.api.Action)"><code class="literal">jacoco { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:lintOptions(org.gradle.api.Action)"><code class="literal">lintOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:packagingOptions(org.gradle.api.Action)"><code class="literal">packagingOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:productFlavors(org.gradle.api.Action)"><code class="literal">productFlavors { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:signingConfigs(org.gradle.api.Action)"><code class="literal">signingConfigs { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:sourceSets(org.gradle.api.Action)"><code class="literal">sourceSets { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:splits(org.gradle.api.Action)"><code class="literal">splits { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:testOptions(org.gradle.api.Action)"><code class="literal">testOptions { }</code></a></li></ul></div><div class="content"><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="com.android.builder.core.DefaultProductFlavor"></a>DefaultProductFlavor</h1></div></div></div><p>The configuration of a product flavor.
+
+This is also used to describe the default configuration of all builds, even those that
+do not contain any flavors.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N113EC"></a>Properties</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N113EF"><thead><tr><td>Property</td><td>Description</td></tr></thead><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:consumerProguardFiles"><code class="literal">consumerProguardFiles</code></a></td><td><p>ProGuard rule files to be included in the published AAR.
+
+</p></td></tr><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:manifestPlaceholders"><code class="literal">manifestPlaceholders</code></a></td><td><p>The manifest placeholders.
+
+</p></td></tr><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:multiDexEnabled"><code class="literal">multiDexEnabled</code></a></td><td><p>Whether Multi-Dex is enabled for this variant.</p></td></tr><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:multiDexKeepFile"><code class="literal">multiDexKeepFile</code></a></td><td><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:multiDexKeepProguard"><code class="literal">multiDexKeepProguard</code></a></td><td><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p></td></tr><tr><td><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:proguardFiles"><code class="literal">proguardFiles</code></a></td><td><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1142E"></a>Methods</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N11431"><thead><tr><td>Method</td><td>Description</td></tr></thead><tr><td><code class="literal"><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String)">missingDimensionStrategy</a>(dimension, requestedValue)</code></td><td><p>Specifies a flavor that the plugin should try to use from a given dimension in a dependency.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String[])">missingDimensionStrategy</a>(dimension, requestedValues)</code></td><td><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.builder.core.DefaultProductFlavor.html#com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.util.List)">missingDimensionStrategy</a>(dimension, requestedValues)</code></td><td><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N11458"></a>Script blocks</h3></div></div></div><p>No script blocks</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1145D"></a>Property details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:consumerProguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">consumerProguardFiles</code></h4></div></div></div><p>ProGuard rule files to be included in the published AAR.
+
+</p><p>These proguard rule files will then be used by any application project that consumes the
+AAR (if ProGuard is enabled).
+
+</p><p>This allows AAR to specify shrinking or obfuscation exclude rules.
+
+</p><p>This is only valid for Library project. This is ignored in Application project.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:manifestPlaceholders"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/Map.html" target="_top"><code class="classname">Map</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_top"><code class="classname">Object</code></a>&gt;</code> <code class="literal">manifestPlaceholders</code></h4></div></div></div><p>The manifest placeholders.
+
+</p><p>See <a class="ulink" href="https://developer.android.com/studio/build/manifest-build-variables.html" target="_top">
+    Inject Build Variables into the Manifest</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:multiDexEnabled"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/Boolean.html" target="_top"><code class="classname">Boolean</code></a> <code class="literal">multiDexEnabled</code></h4></div></div></div><p>Whether Multi-Dex is enabled for this variant.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:multiDexKeepFile"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepFile</code></h4></div></div></div><p>Text file that specifies additional classes that will be compiled into the main dex file.
+
+</p><p>Classes specified in the file are appended to the main dex classes computed using
+<code class="literal">aapt</code>.
+
+</p><p>If set, the file should contain one class per line, in the following format:
+<code class="literal">com/example/MyClass.class</code></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:multiDexKeepProguard"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">multiDexKeepProguard</code></h4></div></div></div><p>Text file with additional ProGuard rules to be used to determine which classes are compiled
+into the main dex file.
+
+</p><p>If set, rules from this file are used in combination with the default rules used by the
+build system.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:proguardFiles"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a>&gt;</code> <code class="literal">proguardFiles</code></h4></div></div></div><p>Specifies the ProGuard configuration files that the plugin should use.
+
+</p><p>There are two ProGuard rules files that ship with the Android plugin and are used by
+default:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">proguard-android.txt
+  </li><li class="listitem">proguard-android-optimize.txt
+</li></ul></div><p><code class="literal">proguard-android-optimize.txt</code> is identical to <code class="literal">proguard-android.txt
+</code>, exccept with optimizations enabled. You can use <code class="literal">
+getDefaultProguardFile(String filename)</code> to return the full path of the files.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N114F1"></a>Method details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String)"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> requestedValue)</h4></div></div></div><p>Specifies a flavor that the plugin should try to use from a given dimension in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a flavor that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+        }
+        paid {}
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.lang.String[])"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>...</code> requestedValues)</h4></div></div></div><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of flavors that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor. You can include additional flavor names to provide a</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sorted list of fallbacks for the dimension.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'arm64'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+        }
+        paid {}
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.builder.core.DefaultProductFlavor:missingDimensionStrategy(java.lang.String, java.util.List)"></a><code class="classname">void</code> <code class="literal">missingDimensionStrategy</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> dimension, <code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> requestedValues)</h4></div></div></div><p>Specifies a sorted list of flavors that the plugin should try to use from a given dimension
+in a dependency.
+
+</p><p>Android plugin 3.0.0 and higher try to match each variant of your module with the same one
+from its dependencies. For example, consider if both your app and its dependencies include a
+"tier" <a class="ulink" href="/studio/build/build-variants.html#flavor-dimensions" target="_top">flavor dimension</a>,
+with flavors "free" and "paid". When you build a "freeDebug" version of your app, the plugin
+tries to match it with "freeDebug" versions of the local library modules the app depends on.
+
+</p><p>However, there may be situations in which <span class="emphasis"><em>a library dependency includes a flavor
+dimension that your app does not</em></span>. For example, consider if a library dependency includes
+flavors for a "minApi" dimension, but your app includes flavors for only the "tier"
+dimension. So, when you want to build the "freeDebug" version of your app, the plugin doesn't
+know whether to use the "minApi23Debug" or "minApi18Debug" version of the dependency, and
+you'll see an error message similar to the following:
+
+</p><pre class="programlisting">Error:Failed to resolve: Could not resolve project :mylibrary.
+Required by:
+    project :app</pre><p>In this type of situation, use <code class="literal">missingDimensionStrategy</code> in the <a class="ulink" href="com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="literal">defaultConfig</code>
+</a> block to specify the default flavor the plugin should select from each missing
+dimension, as shown in the sample below. You can also override your selection in the <a class="ulink" href="com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="literal">productFlavors</code>
+</a> block, so each flavor can specify a different matching strategy for a missing dimension.
+(Tip: you can also use this property if you simply want to change the matching strategy for a
+dimension that exists in both the app and its dependencies.)
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// In the app's build.gradle file.</span>
+android {
+    defaultConfig{
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies a sorted list of flavors that the plugin should try to use from</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a given dimension. The following tells the plugin that, when encountering</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// a dependency that includes a "minApi" dimension, it should select the</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// "minApi18" flavor. You can include additional flavor names to provide a</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sorted list of fallbacks for the dimension.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify a missingDimensionStrategy property for each</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// dimension that exists in a local dependency but not in your app.</span>
+    missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'abi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'x86'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'arm64'</span>
+    }
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+    productFlavors {
+        free {
+            dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'tier'</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You can override the default selection at the product flavor</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// level by configuring another missingDimensionStrategy property</span>
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// for the "minApi" dimension.</span>
+            missingDimensionStrategy <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi23'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'minApi18'</span>
+        }
+        paid {}
+    }
+}</pre></div></div></div><div id="copyright">
+                       Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+                       For details and restrictions, see the <a href="http://developer.android.com/license.html">Content License</a>.
+                   </div></div></body></html>

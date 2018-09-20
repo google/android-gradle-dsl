@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>TestedExtension - Android Plugin 3.2.0-dev DSL Reference</title><link type="text/css" rel="stylesheet" href="base.css"><link type="text/css" rel="stylesheet" href="docs.css"><link type="text/css" rel="stylesheet" href="dsl.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="up" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference"><link rel="prev" href="com.android.build.api.variant.VariantFilter.html" title="VariantFilter - Android Plugin 3.2.0-dev DSL Reference"><link rel="next" href="com.android.build.gradle.AppExtension.html" title="AppExtension - Android Plugin 3.2.0-dev DSL Reference"></head><body><div class="sidebar"><ul><li><a xmlns:xslthl="http://xslthl.sf.net" href="index.html" title="Android Plugin 3.2.0-dev DSL Reference">Home</a></li><li class="sidebarHeading selected">TestedExtension</li><ul class="sections"><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.TestedExtension.html#N142FE" title="Properties">Properties</a></li><li><a xmlns:xslthl="http://xslthl.sf.net" href="com.android.build.gradle.TestedExtension.html#N1444E" title="Methods">Methods</a></li></ul><li class="sidebarHeading">Extension types</li><li><a class="link" href="com.android.build.gradle.AppExtension.html"><code class="literal">AppExtension</code></a></li><li><a class="link" href="com.android.build.gradle.LibraryExtension.html"><code class="literal">LibraryExtension</code></a></li><li><a class="link" href="com.android.build.gradle.TestExtension.html"><code class="literal">TestExtension</code></a></li><li><a class="link" href="com.android.build.gradle.FeatureExtension.html"><code class="literal">FeatureExtension</code></a></li><li class="sidebarHeading">Configuration blocks</li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:aaptOptions(org.gradle.api.Action)"><code class="literal">aaptOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:adbOptions(org.gradle.api.Action)"><code class="literal">adbOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:buildTypes(org.gradle.api.Action)"><code class="literal">buildTypes { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:compileOptions(org.gradle.api.Action)"><code class="literal">compileOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dataBinding(org.gradle.api.Action)"><code class="literal">dataBinding { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:defaultConfig(org.gradle.api.Action)"><code class="literal">defaultConfig { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:dexOptions(org.gradle.api.Action)"><code class="literal">dexOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:externalNativeBuild(org.gradle.api.Action)"><code class="literal">externalNativeBuild { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:jacoco(org.gradle.api.Action)"><code class="literal">jacoco { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:lintOptions(org.gradle.api.Action)"><code class="literal">lintOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:packagingOptions(org.gradle.api.Action)"><code class="literal">packagingOptions { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:productFlavors(org.gradle.api.Action)"><code class="literal">productFlavors { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:signingConfigs(org.gradle.api.Action)"><code class="literal">signingConfigs { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:sourceSets(org.gradle.api.Action)"><code class="literal">sourceSets { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:splits(org.gradle.api.Action)"><code class="literal">splits { }</code></a></li><li><a class="link" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:testOptions(org.gradle.api.Action)"><code class="literal">testOptions { }</code></a></li></ul></div><div class="content"><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="com.android.build.gradle.TestedExtension"></a>TestedExtension</h1></div></div></div><p>Provides test components that are common to <a class="ulink" href="./com.android.build.gradle.AppExtension.html" target="_top"><code class="classname">AppExtension</code></a>, <a class="ulink" href="./com.android.build.gradle.LibraryExtension.html" target="_top"><code class="classname">LibraryExtension</code></a>, and
+<a class="ulink" href="./com.android.build.gradle.FeatureExtension.html" target="_top"><code class="classname">FeatureExtension</code></a>.
+
+</p><p>To learn more about testing Android projects, read <a class="ulink" href="https://developer.android.com/studio/test/index.html" target="_top">Test Your App</a>.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N142FE"></a>Properties</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N14301"><thead><tr><td>Property</td><td>Description</td></tr></thead><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:aaptOptions"><code class="literal">aaptOptions</code></a></td><td><p>Specifies options for the Android Asset Packaging Tool (AAPT).</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:adbExecutable"><code class="literal">adbExecutable</code></a></td><td><p>Returns a path to the <a class="ulink" href="https://developer.android.com/studio/command-line/adb.html" target="_top">Android Debug Bridge
+(ADB)</a> executable from the Android SDK.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:adbOptions"><code class="literal">adbOptions</code></a></td><td><p>Specifies APK install options for the <a class="ulink" href="https://developer.android.com/studio/command-line/adb.html" target="_top">Android Debug Bridge
+(ADB)</a>.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:buildToolsVersion"><code class="literal">buildToolsVersion</code></a></td><td><p>Specifies the version of the <a class="ulink" href="https://developer.android.com/studio/releases/build-tools.html" target="_top">SDK Build Tools</a> to
+use when building your project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:buildTypes"><code class="literal">buildTypes</code></a></td><td><p>Encapsulates all build type configurations for this project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:compileOptions"><code class="literal">compileOptions</code></a></td><td><p>Specifies Java compiler options, such as the language level of the Java source code and
+generated bytecode.</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:compileSdkVersion"><code class="literal">compileSdkVersion</code></a></td><td><p>Specifies the API level to compile your project against. The Android plugin requires you to
+configure this property.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:dataBinding"><code class="literal">dataBinding</code></a></td><td><p>Specifies options for the <a class="ulink" href="https://developer.android.com/topic/libraries/data-binding/index.html" target="_top">Data Binding
+Library</a>.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:defaultConfig"><code class="literal">defaultConfig</code></a></td><td><p>Specifies defaults for variant properties that the Android plugin applies to all build
+variants.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:defaultPublishConfig"><code class="literal">defaultPublishConfig</code></a></td><td><p>Specifies the version of the module to publish externally. This property is generally useful
+only to library modules that you intend to publish to a remote repository, such as Maven.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:dexOptions"><code class="literal">dexOptions</code></a></td><td><p>Specifies options for the DEX tool, such as enabling library pre-dexing.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:externalNativeBuild"><code class="literal">externalNativeBuild</code></a></td><td><p>Specifies options for external native build using <a class="ulink" href="https://cmake.org/" target="_top">CMake</a> or
+<a class="ulink" href="https://developer.android.com/ndk/guides/ndk-build.html" target="_top">ndk-build</a>.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:flavorDimensionList"><code class="literal">flavorDimensionList</code></a></td><td><p>Specifies the names of product flavor dimensions for this project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:generatePureSplits"><code class="literal">generatePureSplits</code></a></td><td><div class="caution" title="Caution">Incubating</div><p>Specifies whether to build APK splits or multiple APKs from configurations in the <a class="ulink" href="./com.android.build.gradle.internal.dsl.Splits.html" target="_top"><code class="classname">Splits</code></a> block.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:jacoco"><code class="literal">jacoco</code></a></td><td><div class="caution" title="Caution">Deprecated</div><p>Configure JaCoCo version that is used for offline instrumentation and coverage report.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:lintOptions"><code class="literal">lintOptions</code></a></td><td><p>Specifies options for the lint tool.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:ndkDirectory"><code class="literal">ndkDirectory</code></a></td><td><p>The path to the <a class="ulink" href="https://developer.android.com/ndk/index.html" target="_top">Android
+NDK</a> that Gradle uses for this project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:packagingOptions"><code class="literal">packagingOptions</code></a></td><td><p>Specifies options and rules that determine which files the Android plugin packages into your
+APK.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:productFlavors"><code class="literal">productFlavors</code></a></td><td><p>Encapsulates all product flavors configurations for this project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:resourcePrefix"><code class="literal">resourcePrefix</code></a></td><td><p>Specifies the module's resource prefix to Android Studio for editor features, such as Lint
+checks. This property is useful only when using Android Studio.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:sdkDirectory"><code class="literal">sdkDirectory</code></a></td><td><p>The path to the Android SDK that Gradle uses for this project.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:signingConfigs"><code class="literal">signingConfigs</code></a></td><td><p>Encapsulates signing configurations that you can apply to <a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> and <a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a> configurations.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:sourceSets"><code class="literal">sourceSets</code></a></td><td><p>Encapsulates source set configurations for all variants.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:splits"><code class="literal">splits</code></a></td><td><p>Specifies configurations for <a class="ulink" href="https://developer.android.com/studio/build/configure-apk-splits.html" target="_top">building multiple
+APKs</a> or APK splits.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:testBuildType"><code class="literal">testBuildType</code></a></td><td><p>Specifies the <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#build-types" target="_top">build
+type</a> that the plugin should use to test the module.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:testOptions"><code class="literal">testOptions</code></a></td><td><p>Specifies options for how the Android plugin should run local and instrumented tests.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:testVariants"><code class="literal">testVariants</code></a></td><td><p>Returns a collection of Android test <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">build variants</a>.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:unitTestVariants"><code class="literal">unitTestVariants</code></a></td><td><p>Returns a collection of Android unit test <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">build variants</a>.
+
+</p></td></tr><tr><td><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:variantFilter"><code class="literal">variantFilter</code></a></td><td><p>Specifies variants the Android plugin should include or remove from your Gradle project.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1444E"></a>Methods</h3></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><div class="table-contents"><table id="N14451"><thead><tr><td>Method</td><td>Description</td></tr></thead><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:flavorDimensions(java.lang.String[])">flavorDimensions</a>(dimensions)</code></td><td><p>Specifies the names of product flavor dimensions for this project.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:useLibrary(java.lang.String)">useLibrary</a>(name)</code></td><td><p>Includes the specified library to the classpath.
+
+</p></td></tr><tr><td><code class="literal"><a class="link" href="com.android.build.gradle.TestedExtension.html#com.android.build.gradle.TestedExtension:useLibrary(java.lang.String, boolean)">useLibrary</a>(name, required)</code></td><td><p>/** Includes the specified library to the classpath.
+
+</p></td></tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N14478"></a>Script blocks</h3></div></div></div><p>No script blocks</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N1447D"></a>Property details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:aaptOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.AaptOptions.html" target="_top"><code class="classname">AaptOptions</code></a> <code class="literal">aaptOptions</code></h4></div></div></div><p>Specifies options for the Android Asset Packaging Tool (AAPT).</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:adbExecutable"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">adbExecutable</code></h4></div></div></div><p>Returns a path to the <a class="ulink" href="https://developer.android.com/studio/command-line/adb.html" target="_top">Android Debug Bridge
+(ADB)</a> executable from the Android SDK.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:adbOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.AdbOptions.html" target="_top"><code class="classname">AdbOptions</code></a> <code class="literal">adbOptions</code></h4></div></div></div><p>Specifies APK install options for the <a class="ulink" href="https://developer.android.com/studio/command-line/adb.html" target="_top">Android Debug Bridge
+(ADB)</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:buildToolsVersion"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">buildToolsVersion</code></h4></div></div></div><p>Specifies the version of the <a class="ulink" href="https://developer.android.com/studio/releases/build-tools.html" target="_top">SDK Build Tools</a> to
+use when building your project.
+
+</p><p>When using Android plugin 3.0.0 or later, configuring this property is optional. By
+default, the plugin uses the minimum version of the build tools required by the <a class="ulink" href="https://developer.android.com/studio/releases/gradle-plugin.html#revisions" target="_top">version of
+the plugin</a> you're using. To specify a different version of the build tools for the plugin
+to use, specify the version as follows:
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifying this property is optional.</span>
+buildToolsVersion <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"26.0.0"</span></pre><p>For a list of build tools releases, read <a class="ulink" href="https://developer.android.com/studio/releases/build-tools.html#notes" target="_top">the release
+notes</a>.
+
+</p><p>Note that the value assigned to this property is parsed and stored in a normalized form,
+so reading it back may give a slightly different result.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:buildTypes"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>&lt;<a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a>&gt;</code> <code class="literal">buildTypes</code></h4></div></div></div><p>Encapsulates all build type configurations for this project.
+
+</p><p>Unlike using <a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a> to create
+different versions of your project that you expect to co-exist on a single device, build
+types determine how Gradle builds and packages each version of your project. Developers
+typically use them to configure projects for various stages of a development lifecycle. For
+example, when creating a new project from Android Studio, the Android plugin configures a
+'debug' and 'release' build type for you. By default, the 'debug' build type enables
+debugging options and signs your APK with a generic debug keystore. Conversely, The 'release'
+build type strips out debug symbols and requires you to <a class="ulink" href="https://developer.android.com/studio/publish/app-signing.html#sign-apk" target="_top">create a
+release key and keystore</a> for your app. You can then combine build types with product
+flavors to <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">create
+build variants</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:compileOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.CompileOptions.html" target="_top"><code class="classname">CompileOptions</code></a> <code class="literal">compileOptions</code></h4></div></div></div><p>Specifies Java compiler options, such as the language level of the Java source code and
+generated bytecode.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:compileSdkVersion"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">compileSdkVersion</code></h4></div></div></div><p>Specifies the API level to compile your project against. The Android plugin requires you to
+configure this property.
+
+</p><p>This means your code can use only the Android APIs included in that API level and lower.
+You can configure the compile sdk version by adding the following to the <code class="literal">android</code>
+block: <code class="literal">compileSdkVersion 26</code>.
+
+</p><p>You should generally <a class="ulink" href="https://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_top">use
+the most up-to-date API level</a> available. If you are planning to also support older API
+levels, it's good practice to <a class="ulink" href="https://developer.android.com/studio/write/lint.html" target="_top">use the Lint tool</a> to check if
+you are using APIs that are not available in earlier API levels.
+
+</p><p>The value you assign to this property is parsed and stored in a normalized form, so
+reading it back may return a slightly different value.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:dataBinding"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.DataBindingOptions.html" target="_top"><code class="classname">DataBindingOptions</code></a> <code class="literal">dataBinding</code></h4></div></div></div><p>Specifies options for the <a class="ulink" href="https://developer.android.com/topic/libraries/data-binding/index.html" target="_top">Data Binding
+Library</a>.
+
+</p><p>Data binding helps you write declarative layouts and minimize the glue code necessary to
+bind your application logic and layouts.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:defaultConfig"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="classname">DefaultConfig</code></a> <code class="literal">defaultConfig</code></h4></div></div></div><p>Specifies defaults for variant properties that the Android plugin applies to all build
+variants.
+
+</p><p>You can override any <code class="literal">defaultConfig</code> property when <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#product-flavors" target="_top">configuring
+product flavors</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:defaultPublishConfig"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">defaultPublishConfig</code></h4></div></div></div><p>Specifies the version of the module to publish externally. This property is generally useful
+only to library modules that you intend to publish to a remote repository, such as Maven.
+
+</p><p>If you don't configure this property, the Android plugin publishes the release version of
+the module by default. If the module configures <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#product-flavors" target="_top">product
+flavors</a>, you need to configure this property with the name of the variant you want the
+plugin to publish, as shown below:
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies the 'demoDebug' build variant as the default variant</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// that the plugin should publish to external consumers.</span>
+defaultPublishConfig <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'demoDebug'</span></pre><p>If you plan to only consume your library module locally, you do not need to configure this
+property. Android plugin 3.0.0 and higher use <a class="ulink" href="https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html#variant_aware" target="_top">variant-aware
+dependency resolution</a> to automatically match the variant of the producer to that of the
+consumer. That is, when publishing a module to another local module, the plugin no longer
+respects this property when determining which version of the module to publish to the
+consumer.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:dexOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.DexOptions.html" target="_top"><code class="classname">DexOptions</code></a> <code class="literal">dexOptions</code></h4></div></div></div><p>Specifies options for the DEX tool, such as enabling library pre-dexing.
+
+</p><p>Experimenting with DEX options tailored for your workstation may improve build
+performance. To learn more, read <a class="ulink" href="https://developer.android.com/studio/build/optimize-your-build.html#dex_options" target="_top">Optimize
+your build</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:externalNativeBuild"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.ExternalNativeBuild.html" target="_top"><code class="classname">ExternalNativeBuild</code></a> <code class="literal">externalNativeBuild</code></h4></div></div></div><p>Specifies options for external native build using <a class="ulink" href="https://cmake.org/" target="_top">CMake</a> or
+<a class="ulink" href="https://developer.android.com/ndk/guides/ndk-build.html" target="_top">ndk-build</a>.
+
+</p><p>When using <a class="ulink" href="https://developer.android.com/studio/index.html" target="_top">Android Studio 2.2 or
+higher</a> with <a class="ulink" href="https://developer.android.com/studio/releases/gradle-plugin.html" target="_top">Android plugin 2.2.0
+or higher</a>, you can compile C and C++ code into a native library that Gradle packages into
+your APK.
+
+</p><p>To learn more, read <a class="ulink" href="https://developer.android.com/studio/projects/add-native-code.html" target="_top">Add C and C++ Code
+to Your Project</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:flavorDimensionList"></a><code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/util/List.html" target="_top"><code class="classname">List</code></a>&lt;<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>&gt;</code> <code class="literal">flavorDimensionList</code></h4></div></div></div><p>Specifies the names of product flavor dimensions for this project.
+
+</p><p>To configure flavor dimensions, use <a class="ulink" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:flavorDimensions(java.lang.String[])" target="_top">
+<code class="literal">flavorDimensions</code></a>. To learn more, read <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#flavor-dimensions" target="_top">combine
+multiple product flavors</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:generatePureSplits"></a><code class="classname">boolean</code> <code class="literal">generatePureSplits</code></h4></div></div></div><div class="caution" title="Caution"><p>Note: This property is <a class="ulink" href="" target="_top">incubating</a> and may change in a future version of the plugin.</p></div><p>Specifies whether to build APK splits or multiple APKs from configurations in the <a class="ulink" href="./com.android.build.gradle.internal.dsl.Splits.html" target="_top"><code class="classname">Splits</code></a> block.
+
+</p><p>When you set this property to <code class="literal">true</code>, the Android plugin generates each object
+in the <a class="ulink" href="./com.android.build.gradle.internal.dsl.Splits.html" target="_top"><code class="classname">Splits</code></a> block as a portion of a
+whole APK, called an <span class="emphasis"><em>APK split</em></span>. Compared to building multiple APKs, each APK split
+includes only the components that each ABI or screen density requires. Generating APK splits
+is an incubating feature, which requires you to set <a class="ulink" href="./com.android.build.gradle.internal.dsl.BaseFlavor.html#com.android.build.gradle.internal.dsl.BaseFlavor:minSdkVersion(int)" target="_top"><code class="classname">BaseFlavor.minSdkVersion()</code></a> to <code class="literal">21</code> or
+higher, and is currently supported only when publishing <a class="ulink" href="https://d.android.com/instant-apps" target="_top">Android Instant Apps</a>.
+
+</p><p>When you do not configure this property or set it to <code class="literal">false</code> (default), the
+Android plugin builds separate APKs for each object you configure in the <a class="ulink" href="./com.android.build.gradle.internal.dsl.Splits.html" target="_top"><code class="classname">Splits</code></a> block that you can deploy to a device.
+To learn more about building different versions of your app that each target a different <a class="ulink" href="https://developer.android.com/ndk/guides/abis.html" target="_top">Application Binary Interfaces</a>
+or screen density, read <a class="ulink" href="https://developer.android.com/studio/build/configure-apk-splits.html" target="_top">Build Multiple
+APKs</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:jacoco"></a><a class="ulink" href="./com.android.build.gradle.internal.coverage.JacocoOptions.html" target="_top"><code class="classname">JacocoOptions</code></a> <code class="literal">jacoco</code></h4></div></div></div><div class="caution" title="Caution"><p>Note: This property is <a class="ulink" href="" target="_top">deprecated</a> and will be removed in a future version of the plugin.</p></div><p>Configure JaCoCo version that is used for offline instrumentation and coverage report.
+
+</p><p>To specify the version of JaCoCo you want to use, add the following to <code class="literal">build.gradle
+</code> file:
+
+</p><pre class="programlisting">android {
+    jacoco {
+        version <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"&lt;jacoco-version&gt;"</span>
+    }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:lintOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.LintOptions.html" target="_top"><code class="classname">LintOptions</code></a> <code class="literal">lintOptions</code></h4></div></div></div><p>Specifies options for the lint tool.
+
+</p><p>Android Studio and the Android SDK provide a code scanning tool called lint that can help
+you to identify and correct problems with the structural quality of your code without having
+to execute the app or write test cases. Each problem the tool detects is reported with a
+description message and a severity level, so that you can quickly prioritize the critical
+improvements that need to be made.
+
+</p><p>This property allows you to configure certain lint options, such as which checks to run or
+ignore. If you're using Android Studio, you can <a class="ulink" href="https://developer.android.com/studio/write/lint.html#cis" target="_top">configure similar lint
+options</a> from the IDE. To learn more about using and running lint, read <a class="ulink" href="https://developer.android.com/studio/write/lint.html" target="_top">Improve Your Code with Lint</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:ndkDirectory"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">ndkDirectory</code></h4></div></div></div><p>The path to the <a class="ulink" href="https://developer.android.com/ndk/index.html" target="_top">Android
+NDK</a> that Gradle uses for this project.
+
+</p><p>You can install the Android NDK by either <a class="ulink" href="https://developer.android.com/studio/intro/update.html#sdk-manager" target="_top">using the SDK
+manager</a> or downloading <a class="ulink" href="https://developer.android.com/ndk/downloads/index.html" target="_top">
+the standalone NDK package</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:packagingOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.PackagingOptions.html" target="_top"><code class="classname">PackagingOptions</code></a> <code class="literal">packagingOptions</code></h4></div></div></div><p>Specifies options and rules that determine which files the Android plugin packages into your
+APK.
+
+</p><p>For example, the following example tells the plugin to avoid packaging files that are
+intended only for testing:
+
+</p><pre class="programlisting">packagingOptions {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Tells the plugin to not include any files in the 'testing-data/' directory,</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// which is specified as an absolute path from the root of the APK archive.</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// The exclude property includes certain defaults paths to help you avoid common</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// duplicate file errors when building projects with multiple dependencies.</span>
+    exclude <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"/testing-data/**"</span>
+}</pre><p>To learn more about how to specify rules for packaging, merging, and excluding files, see
+<a class="ulink" href="./com.android.build.gradle.internal.dsl.PackagingOptions.html" target="_top"><code class="classname">PackagingOptions</code></a></p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:productFlavors"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>&lt;<a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a>&gt;</code> <code class="literal">productFlavors</code></h4></div></div></div><p>Encapsulates all product flavors configurations for this project.
+
+</p><p>Product flavors represent different versions of your project that you expect to co-exist
+on a single device, the Google Play store, or repository. For example, you can configure
+'demo' and 'full' product flavors for your app, and each of those flavors can specify
+different features, device requirements, resources, and application ID's--while sharing
+common source code and resources. So, product flavors allow you to output different versions
+of your project by simply changing only the components and settings that are different
+between them.
+
+</p><p>Configuring product flavors is similar to <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#build-types" target="_top">configuring
+build types</a>: add them to the <code class="literal">productFlavors</code> block of your module's <code class="literal">
+build.gradle</code> file and configure the settings you want. Product flavors support the
+same properties as the <a class="ulink" href="./com.android.build.gradle.internal.dsl.DefaultConfig.html" target="_top"><code class="classname">DefaultConfig</code></a>
+block--this is because <code class="literal">defaultConfig</code> defines a <a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a> object that the plugin uses as the base
+configuration for all other flavors. Each flavor you configure can then override any of the
+default values in <code class="literal">defaultConfig</code>, such as the <a class="ulink" href="https://d.android.com/studio/build/application-id.html" target="_top"><code class="literal">applicationId</code></a>.
+
+</p><p>When using Android plugin 3.0.0 and higher, <span class="emphasis"><em>each flavor must belong to a <a class="ulink" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:flavorDimensions(java.lang.String[])" target="_top">
+<code class="literal">flavorDimensions</code></a> value</em></span>. By default, when you specify only one
+dimension, all flavors you configure belong to that dimension. If you specify more than one
+flavor dimension, you need to manually assign each flavor to a dimension. To learn more, read
+<a class="ulink" href="https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html#variant_aware" target="_top">
+Use Flavor Dimensions for variant-aware dependency management</a>.
+
+</p><p>When you configure product flavors, the Android plugin automatically combines them with
+your <a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> configurations to <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">create build
+variants</a>. If the plugin creates certain build variants that you don't want, you can <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#filter-variants" target="_top">filter
+variants</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:resourcePrefix"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">resourcePrefix</code></h4></div></div></div><p>Specifies the module's resource prefix to Android Studio for editor features, such as Lint
+checks. This property is useful only when using Android Studio.
+
+</p><p>Including unique prefixes for module resources helps avoid naming collisions with
+resources from other modules. For example, when creating a library with String resources, you
+may want to name each resource with a unique prefix, such as <code class="literal">"mylib_"</code> to avoid
+naming collisions with similar resources that the consumer defines. You can then specify this
+prefix, as shown below, so that Android Studio expects this prefix when you name module
+resources:
+
+</p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// This property is useful only when developing your project in Android Studio.</span>
+resourcePrefix <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'mylib_'</span></pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:sdkDirectory"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/io/File.html" target="_top"><code class="classname">File</code></a> <code class="literal">sdkDirectory</code></h4></div></div></div><p>The path to the Android SDK that Gradle uses for this project.
+
+</p><p>To learn more about downloading and installing the Android SDK, read <a class="ulink" href="https://developer.android.com/studio/intro/update.html#sdk-manager" target="_top">Update Your Tools
+with the SDK Manager</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:signingConfigs"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>&lt;<a class="ulink" href="./com.android.build.gradle.internal.dsl.SigningConfig.html" target="_top"><code class="classname">SigningConfig</code></a>&gt;</code> <code class="literal">signingConfigs</code></h4></div></div></div><p>Encapsulates signing configurations that you can apply to <a class="ulink" href="./com.android.build.gradle.internal.dsl.BuildType.html" target="_top"><code class="classname">BuildType</code></a> and <a class="ulink" href="./com.android.build.gradle.internal.dsl.ProductFlavor.html" target="_top"><code class="classname">ProductFlavor</code></a> configurations.
+
+</p><p>Android requires that all APKs be digitally signed with a certificate before they can be
+installed onto a device. When deploying a debug version of your project from Android Studio,
+the Android plugin automatically signs your APK with a generic debug certificate. However, to
+build an APK for release, you must <a class="ulink" href="https://developer.android.com/studio/publish/app-signing.html" target="_top">sign the APK</a> with a
+release key and keystore. You can do this by either <a class="ulink" href="https://developer.android.com/studio/publish/app-signing.html#sign-apk" target="_top">using the
+Android Studio UI</a> or manually <a class="ulink" href="https://developer.android.com/studio/publish/app-signing.html#gradle-sign" target="_top">configuring
+your <code class="literal">build.gradle</code> file</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:sourceSets"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>&lt;<a class="ulink" href="./com.android.build.gradle.api.AndroidSourceSet.html" target="_top"><code class="classname">AndroidSourceSet</code></a>&gt;</code> <code class="literal">sourceSets</code></h4></div></div></div><p>Encapsulates source set configurations for all variants.
+
+</p><p>The Android plugin looks for your project's source code and resources in groups of
+directories called <span class="emphasis"><em><a class="ulink" href="https://developer.android.com/studio/build/index.html#sourcesets" target="_top">source sets</a></em></span>.
+Each source set also determines the scope of build outputs that should consume its code and
+resources. For example, when creating a new project from Android Studio, the IDE creates
+directories for a <code class="literal">main/</code> source set that contains the code and resources you want
+to share between all your build variants.
+
+</p><p>You can then define basic functionality in the <code class="literal">main/</code> source set, but use
+product flavor source sets to change only the branding of your app between different clients,
+or include special permissions and logging functionality to only "debug" versions of your
+app.
+
+</p><p>The Android plugin expects you to organize files for source set directories a certain way,
+similar to the <code class="literal">main/</code> source set. For example, Gradle expects Java class files
+that are specific to your "debug" build type to be located in the <code class="literal">src/debug/java/
+</code> directory.
+
+</p><p>Gradle provides a useful task to shows you how to organize your files for each build
+type-, product flavor-, and build variant-specific source set. you can run this task from the
+command line as follows:
+
+</p><pre class="programlisting">./gradlew sourceSets</pre><p>The following sample output describes where Gradle expects to find certain files for the
+"debug" build type:
+
+</p><pre class="programlisting">------------------------------------------------------------
+Project :app
+------------------------------------------------------------
+
+...
+
+debug
+----
+Compile configuration: compile
+build.gradle name: android.sourceSets.debug
+Java sources: [app/src/debug/java]
+Manifest file: app/src/debug/AndroidManifest.xml
+Android resources: [app/src/debug/res]
+Assets: [app/src/debug/assets]
+AIDL sources: [app/src/debug/aidl]
+RenderScript sources: [app/src/debug/rs]
+JNI sources: [app/src/debug/jni]
+JNI libraries: [app/src/debug/jniLibs]
+Java-style resources: [app/src/debug/resources]</pre><p>If you have sources that are not organized into the default source set directories that
+Gradle expects, as described in the sample output above, you can use the <code class="literal">sourceSet
+</code> block to change where Gradle looks to gather files for each component of a given
+source set. You don't need to relocate the files; you only need to provide Gradle with the
+path(s), relative to the module-level <code class="literal">build.gradle</code> file, where Gradle should
+expect to find files for each source set component.
+
+</p><p><span class="emphasis"><em>Note:</em></span> You should specify only static paths whenever possible. Specifying dynamic
+paths reduces build speed and consistency.
+
+</p><p>The following code sample maps sources from the <code class="literal">app/other/</code> directory to
+certain components of the <code class="literal">main</code> source set and changes the root directory of the
+<code class="literal">androidTest</code> source set:
+
+</p><pre class="programlisting">android {
+  ...
+  sourceSets {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Encapsulates configurations for the main source set.</span>
+    main {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Changes the directory for Java sources. The default directory is</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// 'src/main/java'.</span>
+        java.srcDirs = [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'other/java'</span>]
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// If you list multiple directories, Gradle uses all of them to collect</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sources. Because Gradle gives these directories equal priority, if</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// you define the same resource in more than one directory, you get an</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// error when merging resources. The default directory is 'src/main/res'.</span>
+        res.srcDirs = [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'other/res1'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'other/res2'</span>]
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Note: You should avoid specifying a directory which is a parent to one</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// or more other directories you specify. For example, avoid the following:</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// res.srcDirs = ['other/res1', 'other/res1/layouts', 'other/res1/strings']</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// You should specify either only the root 'other/res1' directory, or only the</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// nested 'other/res1/layouts' and 'other/res1/strings' directories.</span>
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// For each source set, you can specify only one Android manifest.</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// By default, Android Studio creates a manifest for your main source</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// set in the src/main/ directory.</span>
+        manifest.srcFile <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'other/AndroidManifest.xml'</span>
+        ...
+    }
+
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create additional blocks to configure other source sets.</span>
+    androidTest {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// If all the files for a source set are located under a single root</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// directory, you can specify that directory using the setRoot property.</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// When gathering sources for the source set, Gradle looks only in locations</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// relative to the root directory you specify. For example, after applying the</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// configuration below for the androidTest source set, Gradle looks for Java</span>
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// sources only in the src/tests/java/ directory.</span>
+        setRoot <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/tests'</span>
+        ...
+    }
+  }
+}</pre></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:splits"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.Splits.html" target="_top"><code class="classname">Splits</code></a> <code class="literal">splits</code></h4></div></div></div><p>Specifies configurations for <a class="ulink" href="https://developer.android.com/studio/build/configure-apk-splits.html" target="_top">building multiple
+APKs</a> or APK splits.
+
+</p><p>To generate APK splits, you need to also set <a class="ulink" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:generatePureSplits" target="_top">
+<code class="literal">generatePureSplits</code></a> to <code class="literal">true</code>. However, generating APK splits is
+an incubating feature, which requires you to set <a class="ulink" href="./com.android.build.gradle.internal.dsl.BaseFlavor.html#com.android.build.gradle.internal.dsl.BaseFlavor:minSdkVersion(int)" target="_top"><code class="classname">BaseFlavor.minSdkVersion()</code></a> to <code class="literal">21</code> or
+higher, and is currently supported only when publishing <a class="ulink" href="https://d.android.com/instant-apps" target="_top">Android Instant Apps</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:testBuildType"></a><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> <code class="literal">testBuildType</code></h4></div></div></div><p>Specifies the <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#build-types" target="_top">build
+type</a> that the plugin should use to test the module.
+
+</p><p>By default, the Android plugin uses the "debug" build type. This means that when you
+deploy your instrumented tests using <code class="literal">gradlew connectedAndroidTest</code>, it uses the
+code and resources from the module's "debug" build type to create the test APK. The plugin
+then deploys the "debug" version of both the module's APK and the test APK to a connected
+device, and runs your tests.
+
+</p><p>To change the test build type to something other than "debug", specify it as follows:
+
+</p><pre class="programlisting">android {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Changes the test build type for instrumented tests to "stage".</span>
+    testBuildType <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"stage"</span>
+}</pre><p>If your module configures <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#product-flavors" target="_top">product
+flavors</a>, the plugin creates a test APK and deploys tests for each build variant that uses
+the test build type. For example, consider if your module configures "debug" and "release"
+build types, and "free" and "paid" product flavors. By default, when you run your
+instrumented tests using <code class="literal">gradlew connectedAndroidTest</code>, the plugin performs
+executes the following tasks:
+
+</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><code class="literal">connectedFreeDebugAndroidTest</code>: builds and deploys a <code class="literal">freeDebug</code>
+      test APK and module APK, and runs instrumented tests for that variant.
+  </li><li class="listitem"><code class="literal">connectedPaidDebugAndroidTest</code>: builds and deploys a <code class="literal">paidDebug</code>
+      test APK and module APK, and runs instrumented tests for that variant.
+</li></ul></div><p>To learn more, read <a class="ulink" href="https://developer.android.com/studio/test/index.html#create_instrumented_test_for_a_build_variant" target="_top">Create
+instrumented test for a build variant</a>.
+
+</p><p><span class="emphasis"><em>Note:</em></span> You can execute <code class="literal">connected&lt;BuildVariant&gt;AndroidTest</code> tasks
+only for build variants that use the test build type. So, by default, running <code class="literal">
+connectedStageAndroidTest</code> results in the following build error:
+
+</p><pre class="programlisting">Task <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'connectedStageAndroidTest'</span> not found in root project</pre><p>You can resolve this issue by changing the test build type to "stage".</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:testOptions"></a><a class="ulink" href="./com.android.build.gradle.internal.dsl.TestOptions.html" target="_top"><code class="classname">TestOptions</code></a> <code class="literal">testOptions</code></h4></div></div></div><p>Specifies options for how the Android plugin should run local and instrumented tests.
+
+</p><p>To learn more, read <a class="ulink" href="https://developer.android.com/studio/test/index.html#test_options" target="_top">Configure Gradle
+test options</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:testVariants"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/DomainObjectSet.html" target="_top"><code class="classname">DomainObjectSet</code></a>&lt;<code class="classname">TestVariant</code>&gt;</code> <code class="literal">testVariants</code></h4></div></div></div><p>Returns a collection of Android test <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">build variants</a>.
+
+</p><p>To process elements in this collection, you should use the <a class="ulink" href="https://docs.gradle.org/current/javadoc/org/gradle/api/DomainObjectCollection.html#all(org.gradle.api.Action)" target="_top">
+<code class="literal">all</code></a> iterator. That's because the plugin populates this collection only after
+the project is evaluated. Unlike the <code class="literal">each</code> iterator, using <code class="literal">all</code>
+processes future elements as the plugin creates them.
+
+</p><p>To learn more about testing Android projects, read <a class="ulink" href="https://developer.android.com/studio/test/index.html" target="_top">Test Your App</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:unitTestVariants"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/DomainObjectSet.html" target="_top"><code class="classname">DomainObjectSet</code></a>&lt;<code class="classname">UnitTestVariant</code>&gt;</code> <code class="literal">unitTestVariants</code></h4></div></div></div><p>Returns a collection of Android unit test <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html" target="_top">build variants</a>.
+
+</p><p>To process elements in this collection, you should use the <a class="ulink" href="https://docs.gradle.org/current/javadoc/org/gradle/api/DomainObjectCollection.html#all(org.gradle.api.Action)" target="_top">
+<code class="literal">all</code></a> iterator. That's because the plugin populates this collection only after
+the project is evaluated. Unlike the <code class="literal">each</code> iterator, using <code class="literal">all</code>
+processes future elements as the plugin creates them.
+
+</p><p>To learn more about testing Android projects, read <a class="ulink" href="https://developer.android.com/studio/test/index.html" target="_top">Test Your App</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:variantFilter"></a><code class="classname"><a class="ulink" href="http://gradle.org/docs/current/javadoc/org/gradle/api/Action.html" target="_top"><code class="classname">Action</code></a>&lt;<a class="ulink" href="./com.android.build.api.variant.VariantFilter.html" target="_top"><code class="classname">VariantFilter</code></a>&gt;</code> <code class="literal">variantFilter</code></h4></div></div></div><p>Specifies variants the Android plugin should include or remove from your Gradle project.
+
+</p><p>By default, the Android plugin creates a build variant for every possible combination of
+the product flavors and build types that you configure, and adds them to your Gradle project.
+However, there may be certain build variants that either you do not need or do not make sense
+in the context of your project. You can remove certain build variant configurations by <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#filter-variants" target="_top">creating
+a variant filter</a> in your module-level <code class="literal">build.gradle</code> file.
+
+</p><p>The following example tells the plugin to ignore all variants that combine the "dev"
+product flavor, which you can configure to <a class="ulink" href="https://developer.android.com/studio/build/optimize-your-build.html#create_dev_variant" target="_top">optimize
+build speeds</a> during development, and the "release" build type:
+
+</p><pre class="programlisting">android {
+    ...
+    variantFilter { variant -&gt;
+
+        def buildTypeName = variant.buildType*.name
+        def flavorName = variant.flavors*.name
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">if</span> (flavorName.contains(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"dev"</span>) &amp;&amp; buildTypeName.contains(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"release"</span>)) {
+            <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Tells Gradle to ignore each variant that satisfies the conditions above.</span>
+            setIgnore(true)
+        }
+    }
+}</pre><p>During subsequent builds, Gradle ignores any build variants that meet the conditions you
+specify. If you're using <a class="ulink" href="https://developer.android.com/studio/index.html" target="_top">Android
+Studio</a>, those variants no longer appear in the drop down menu when you click <span class="emphasis"><em>Build
+&gt; Select Build Variant</em></span> from the menu bar.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="N14871"></a>Method details</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:flavorDimensions(java.lang.String[])"></a><code class="classname">void</code> <code class="literal">flavorDimensions</code>(<code class="classname"><a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a>...</code> dimensions)</h4></div></div></div><p>Specifies the names of product flavor dimensions for this project.
+
+</p><p>When configuring product flavors with Android plugin 3.0.0 and higher, you must specify at
+least one flavor dimension, using the <a class="ulink" href="com.android.build.gradle.BaseExtension.html#com.android.build.gradle.BaseExtension:flavorDimensions(java.lang.String[])" target="_top">
+<code class="literal">flavorDimensions</code></a> property, and then assign each flavor to a dimension.
+Otherwise, you will get the following build error:
+
+</p><pre class="programlisting">Error:All flavors must now belong to a named flavor dimension.
+The flavor <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'flavor_name'</span> is not assigned to a flavor dimension.</pre><p>By default, when you specify only one dimension, all flavors you configure automatically
+belong to that dimension. If you specify more than one dimension, you need to manually assign
+each flavor to a dimension, as shown in the sample below.
+
+</p><p>Flavor dimensions allow you to create groups of product flavors that you can combine with
+flavors from other flavor dimensions. For example, you can have one dimension that includes a
+'free' and 'paid' version of your app, and another dimension for flavors that support
+different API levels, such as 'minApi21' and 'minApi24'. The Android plugin can then combine
+flavors from these dimensions&mdash;including their settings, code, and resources&mdash;to create
+variants such as 'debugFreeMinApi21' and 'releasePaidMinApi24', and so on. The sample below
+shows you how to specify flavor dimensions and add product flavors to them.
+
+</p><pre class="programlisting">android {
+    ...
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Specifies the flavor dimensions you want to use. The order in which you</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// list each dimension determines its priority, from highest to lowest,</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// when Gradle merges variant sources and configurations. You must assign</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// each product flavor you configure to one of the flavor dimensions.</span>
+    flavorDimensions <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'api'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+
+    productFlavors {
+      demo {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Assigns this product flavor to the 'version' flavor dimension.</span>
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+        ...
+    }
+
+      full {
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'version'</span>
+        ...
+      }
+
+      minApi2<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Assigns this flavor to the 'api' dimension.</span>
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'api'</span>
+        minSdkVersion <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'24'</span>
+        versionNameSuffix <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"-minApi24"</span>
+        ...
+      }
+
+      minApi2<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span> {
+        dimension <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"api"</span>
+        minSdkVersion <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'21'</span>
+        versionNameSuffix <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"-minApi21"</span>
+        ...
+      }
+   }
+}</pre><p>To learn more, read <a class="ulink" href="https://developer.android.com/studio/build/build-variants.html#flavor-dimensions" target="_top">
+Combine multiple flavors</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:useLibrary(java.lang.String)"></a><code class="classname">void</code> <code class="literal">useLibrary</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name)</h4></div></div></div><p>Includes the specified library to the classpath.
+
+</p><p>You typically use this property to support optional platform libraries that ship with the
+Android SDK. The following sample adds the Apache HTTP API library to the project classpath:
+
+</p><pre class="programlisting">android {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Adds a platform library that ships with the Android SDK.</span>
+    useLibrary <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'org.apache.http.legacy'</span>
+}</pre><p>To include libraries that do not ship with the SDK, such as local library modules or
+binaries from remote repositories, <a class="ulink" href="https://developer.android.com/studio/build/dependencies.html" target="_top">add the libraries as
+dependencies</a> in the <code class="literal">dependencies</code> block. Note that Android plugin 3.0.0 and
+later introduce <a class="ulink" href="https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html#new_configurations" target="_top">new
+dependency configurations</a>. To learn more about Gradle dependencies, read <a class="ulink" href="https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html" target="_top">Dependency
+Management Basics</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="signature"><a name="com.android.build.gradle.TestedExtension:useLibrary(java.lang.String, boolean)"></a><code class="classname">void</code> <code class="literal">useLibrary</code>(<a class="ulink" href="http://download.oracle.com/javase/7/docs/api/java/lang/String.html" target="_top"><code class="classname">String</code></a> name, <code class="classname">boolean</code> required)</h4></div></div></div><p>/** Includes the specified library to the classpath.
+
+</p><p>You typically use this property to support optional platform libraries that ship with the
+Android SDK. The following sample adds the Apache HTTP API library to the project classpath:
+
+</p><pre class="programlisting">android {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Adds a platform library that ships with the Android SDK.</span>
+    useLibrary <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'org.apache.http.legacy'</span>
+}</pre><p>To include libraries that do not ship with the SDK, such as local library modules or
+binaries from remote repositories, <a class="ulink" href="https://developer.android.com/studio/build/dependencies.html" target="_top">add the libraries as
+dependencies</a> in the <code class="literal">dependencies</code> block. Note that Android plugin 3.0.0 and
+later introduce <a class="ulink" href="https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html#new_configurations" target="_top">new
+dependency configurations</a>. To learn more about Gradle dependencies, read <a class="ulink" href="https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html" target="_top">Dependency
+Management Basics</a>.</p></div></div></div><div id="copyright">
+                       Except as noted, this content is licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+                       For details and restrictions, see the <a href="http://developer.android.com/license.html">Content License</a>.
+                   </div></div></body></html>
