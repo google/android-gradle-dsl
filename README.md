@@ -1,16 +1,5 @@
-# [Reference for latest plugin version](https://google.github.io/android-gradle-dsl/current)
-[All versions](https://google.github.io/android-gradle-dsl) (https://google.github.io/android-gradle-dsl)
+# This is deprecated. Please visit the new page on [developer.android.com](https://developer.android.com/reference/tools/gradle-api)
 
-[API Javadoc](https://google.github.io/android-gradle-dsl/javadoc/)
-## Android Gradle Plugin DSL Reference
+[Previous versions](https://google.github.io/android-gradle-dsl) (https://google.github.io/android-gradle-dsl)
 
-This repository contains HTML documentation generated from Android Gradle Plugin
-source code. For instructions on how to check out the plugin source code, see the
-[Building the Android Gradle Plugin](http://tools.android.com/build/gradleplugin)
-page.
-
-If you find errors or missing parts, please [file a bug in the Android issue
-tracker](https://code.google.com/p/android/issues/entry?template=Tools%20bug%20report)
-or open an issue in this GitHub repo.
-
-# [Public APIs JavaDoc](https://google.github.io/android-gradle-dsl/javadoc)
+[Previous API Javadoc](https://google.github.io/android-gradle-dsl/javadoc/)
